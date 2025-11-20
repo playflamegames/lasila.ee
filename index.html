@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tasuta AI huviring Rakvere Valla noortele Lasilas. Õpi AI-d praktiliselt - pildid, videod, mängud, muusika ja palju muud!">
+    <meta name="keywords" content="AI kursus, noorte huviring, Lasila, Rakvere vald, tehisintellekt, programmeerimise õppimine">
+    <title>AI Huviring Noortele - Lasila | Rakvere Vald</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo">🤖</span>
+                <span class="brand-text">AI Huviring</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Avaleht</a></li>
+                <li><a href="#about" class="nav-link">Meist</a></li>
+                <li><a href="#modules" class="nav-link">Moodulid</a></li>
+                <li><a href="#sessions" class="nav-link">Tunnid</a></li>
+                <li><a href="#tools" class="nav-link">Tööriistad</a></li>
+                <li><a href="#faq" class="nav-link">KKK</a></li>
+                <li><a href="#contact" class="nav-link cta-button">Registreeru</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Floating Badges -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">✨ Tasuta - Toetajaks on Rakvere Vald</div>
+                <h1 class="hero-title">
+                    Avasta AI Võlumaailma!
+                </h1>
+                <p class="hero-subtitle">
+                    Tasuta AI huviring Rakvere Valla noortele Lasilas.<br>
+                    Õpi looma pilte, videosid, mänge, muusikat ja palju muud!
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-large">
+                        <span>Registreeru Kohe</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                    <a href="#about" class="btn btn-secondary btn-large">
+                        <span>Loe Lähemalt</span>
+                    </a>
+                </div>
+                
+                <!-- Hero Stats -->
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-content">
+                            <div class="stat-number">20</div>
+                            <div class="stat-label">Osalejat (väike grupp)</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📅</div>
+                        <div class="stat-content">
+                            <div class="stat-number">2x</div>
+                            <div class="stat-label">Kuus (2x 45 min)</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📍</div>
+                        <div class="stat-content">
+                            <div class="stat-number">Lasila</div>
+                            <div class="stat-label">Rakvere Vald</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">💰</div>
+                        <div class="stat-content">
+                            <div class="stat-number">Tasuta</div>
+                            <div class="stat-label">Vald toetab</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Floating Badges with Robot Icon -->
+            <div class="hero-visual">
+                <div class="robot-icon">
+                    <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                        <circle cx="100" cy="100" r="90" fill="white" opacity="0.9"/>
+                        <circle cx="100" cy="100" r="60" fill="#667eea" opacity="0.1"/>
+                        <circle cx="75" cy="85" r="10" fill="#667eea"/>
+                        <circle cx="125" cy="85" r="10" fill="#667eea"/>
+                        <path d="M75 120 Q100 135 125 120" stroke="#667eea" stroke-width="4" stroke-linecap="round" fill="none"/>
+                        <rect x="85" y="50" width="30" height="15" rx="5" fill="#667eea" opacity="0.3"/>
+                        <circle cx="60" cy="100" r="15" fill="#667eea" opacity="0.2"/>
+                        <circle cx="140" cy="100" r="15" fill="#667eea" opacity="0.2"/>
+                    </svg>
+                </div>
+
+                <!-- Floating Topic Badges -->
+                <div class="floating-badge badge-1" style="--delay: 0s; --duration: 3s;">
+                    <div class="badge-icon">🎨</div>
+                    <div class="badge-text">Pildiloome</div>
+                </div>
+                
+                <div class="floating-badge badge-2" style="--delay: 0.5s; --duration: 3.5s;">
+                    <div class="badge-icon">🎮</div>
+                    <div class="badge-text">Mängude Loomine</div>
+                </div>
+                
+                <div class="floating-badge badge-3" style="--delay: 1s; --duration: 4s;">
+                    <div class="badge-icon">🎬</div>
+                    <div class="badge-text">Video Editorimine</div>
+                </div>
+                
+                <div class="floating-badge badge-4" style="--delay: 1.5s; --duration: 3.2s;">
+                    <div class="badge-icon">🎵</div>
+                    <div class="badge-text">AI Muusika</div>
+                </div>
+                
+                <div class="floating-badge badge-5" style="--delay: 0.3s; --duration: 3.8s;">
+                    <div class="badge-icon">💻</div>
+                    <div class="badge-text">Koodimise Alused</div>
+                </div>
+                
+                <div class="floating-badge badge-6" style="--delay: 1.2s; --duration: 3.6s;">
+                    <div class="badge-icon">🎙️</div>
+                    <div class="badge-text">Podcast & Audio</div>
+                </div>
+
+                <div class="floating-badge badge-7" style="--delay: 0.8s; --duration: 4.2s;">
+                    <div class="badge-icon">📊</div>
+                    <div class="badge-text">Andmete Analüüs</div>
+                </div>
+
+                <div class="floating-badge badge-8" style="--delay: 1.8s; --duration: 3.4s;">
+                    <div class="badge-icon">🎭</div>
+                    <div class="badge-text">AI Eetika</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Huviring</span>
+                <h2 class="section-title">Mis On AI Huviring?</h2>
+                <p class="section-subtitle">Praktilised AI oskused noortele - lõbus, kaasahaarav ja tulevikku vaatav!</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="about-icon">🎯</div>
+                    <h3>Meie Eesmärk</h3>
+                    <p>Tutvustada noortele kiiresti arenevat AI maailma praktiliste projektide ja loominguliste ülesannete kaudu. Õppimine läbi tegemise!</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Kellele?</h3>
+                    <p>Noortele vanuses 12-16 aastat, kes on uudishimulikud tehnoloogia vastu. Eelnev kogemus pole vajalik - algame nullist!</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">🎨</div>
+                    <h3>Kuidas Õpime?</h3>
+                    <p>70% ajast lapsed ise loovad midagi käega katsutavat - pildid, videod, mängud. Minimaalselt loengut, maksimaalset praktikat!</p>
+                </div>
+
+                <div class="about-card highlight-card">
+                    <div class="about-icon">💰</div>
+                    <h3>Täiesti Tasuta!</h3>
+                    <p><strong>Rakvere Vald toetab</strong> seda huviringi täielikult. Kõik tööriistad ja materjalid on kaasatud. Osalejatel ei ole ühtegi kulu!</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">🔒</div>
+                    <h3>Turvaline Õppimine</h3>
+                    <p>Kasutame ainult turvaliseid, lastele sobivaid platvorme. Vanema nõusolek on nõutav. Privaatsus on meile oluline!</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">🏆</div>
+                    <h3>Mida Saavad?</h3>
+                    <p>Iga laps loob oma AI projektide portfoolio, mida saab jagada ja millega uhkust tunda. Tunnistus kursuse lõpus!</p>
+                </div>
+            </div>
+
+            <!-- Course Details Card -->
+            <div class="course-details">
+                <h3>📋 Kursuse Üksikasjad</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <strong>⏰ Kestus:</strong>
+                        <span>6-12 kuud (24 sessiooni kokku)</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>📅 Sagedus:</strong>
+                        <span>2x kuus (2x 45 minutit korraga)</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>📍 Asukoht:</strong>
+                        <span>Lasila, Rakvere Vald</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>👥 Osallejaid:</strong>
+                        <span>Kuni 20 osalejat (väike grupp)</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>🎯 Vanusegrupp:</strong>
+                        <span>12-16 aastat</span>
+                    </div>
+                    <div class="detail-item">
+                        <strong>💻 Tööriistad:</strong>
+                        <span>Tasuta AI platvormid</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules Section -->
+    <section id="modules" class="modules-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Õppekava</span>
+                <h2 class="section-title">7 Põnevat Moodulit</h2>
+                <p class="section-subtitle">Igal moodulil on oma teemad ja praktilised projektid</p>
+            </div>
+
+            <div class="modules-grid">
+                <!-- Module 1 -->
+                <div class="module-card module-1">
+                    <div class="module-number">01</div>
+                    <div class="module-icon">🚀</div>
+                    <h3 class="module-title">AI Alused & Esimesed Sammud</h3>
+                    <p class="module-description">Mis on AI? Kuidas see töötab? Promptimise kunst ja AI kui õpiabi.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">AI tutvustus</span>
+                        <span class="topic-tag">Promptimine</span>
+                        <span class="topic-tag">Õpiabi</span>
+                    </div>
+                    <div class="module-sessions">3 sessiooni</div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="module-card module-2">
+                    <div class="module-number">02</div>
+                    <div class="module-icon">🎨</div>
+                    <h3 class="module-title">Visuaalne Looving</h3>
+                    <p class="module-description">Pildiloomine, kujundus, 3D & fantaasiamaailmad. Loo oma kunstiteosed!</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Pildid</span>
+                        <span class="topic-tag">Disain</span>
+                        <span class="topic-tag">3D kunst</span>
+                    </div>
+                    <div class="module-sessions">3 sessiooni</div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="module-card module-3">
+                    <div class="module-number">03</div>
+                    <div class="module-icon">🎬</div>
+                    <h3 class="module-title">Video & Animatsioon</h3>
+                    <p class="module-description">Video loomine AI-ga, lühivideod, animatsioonid ja hääled.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Video</span>
+                        <span class="topic-tag">Animatsioon</span>
+                        <span class="topic-tag">Hääled</span>
+                    </div>
+                    <div class="module-sessions">3 sessiooni</div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="module-card module-4">
+                    <div class="module-number">04</div>
+                    <div class="module-icon">🎮</div>
+                    <h3 class="module-title">Mängud & Interaktiivsus</h3>
+                    <p class="module-description">Lihtsad mängud, interaktiivsed lood ja koodimise põhitõed AI abiga.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Mängud</span>
+                        <span class="topic-tag">Lood</span>
+                        <span class="topic-tag">Kood</span>
+                    </div>
+                    <div class="module-sessions">3 sessiooni</div>
+                </div>
+
+                <!-- Module 5 - AUDIO & MUUSIKA -->
+                <div class="module-card module-5">
+                    <div class="module-number">05</div>
+                    <div class="module-icon">🎵</div>
+                    <h3 class="module-title">Audio & Muusika</h3>
+                    <p class="module-description">AI muusika loomine, podcast'id, heliefektid ja raadiosaated.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Muusika</span>
+                        <span class="topic-tag">Podcast</span>
+                        <span class="topic-tag">Helid</span>
+                    </div>
+                    <div class="module-sessions">2 sessiooni</div>
+                </div>
+
+                <!-- Module 6 -->
+                <div class="module-card module-6">
+                    <div class="module-number">06</div>
+                    <div class="module-icon">📊</div>
+                    <h3 class="module-title">Praktilised Oskused</h3>
+                    <p class="module-description">AI koolis, andmete analüüs ja presentatsioonide loomine.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Kool</span>
+                        <span class="topic-tag">Andmed</span>
+                        <span class="topic-tag">Esitlused</span>
+                    </div>
+                    <div class="module-sessions">3 sessiooni</div>
+                </div>
+
+                <!-- Module 7 -->
+                <div class="module-card module-7">
+                    <div class="module-number">07</div>
+                    <div class="module-icon">🛡️</div>
+                    <h3 class="module-title">Eetika & Tuleviku Oskused</h3>
+                    <p class="module-description">AI pimedapool, tuleviku ametid ja lõpuprojekt.</p>
+                    <div class="module-topics">
+                        <span class="topic-tag">Eetika</span>
+                        <span class="topic-tag">Tuleviku ametid</span>
+                        <span class="topic-tag">Portfoolio</span>
+                    </div>
+                    <div class="module-sessions">3 sessiooni</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessions Section -->
+    <section id="sessions" class="sessions-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tunniplaan</span>
+                <h2 class="section-title">24 Põnevat Sessiooni</h2>
+                <p class="section-subtitle">Iga sessioon on täis praktilisi tegevusi ja projekte</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Kõik (24)</button>
+                <button class="filter-btn" data-filter="alused">🚀 Alused</button>
+                <button class="filter-btn" data-filter="pildid">🎨 Pildid</button>
+                <button class="filter-btn" data-filter="video">🎬 Video</button>
+                <button class="filter-btn" data-filter="mangud">🎮 Mängud</button>
+                <button class="filter-btn" data-filter="audio">🎵 Audio</button>
+                <button class="filter-btn" data-filter="praktiline">📊 Praktiline</button>
+                <button class="filter-btn" data-filter="eetika">🛡️ Eetika</button>
+            </div>
+
+            <!-- Sessions Grid -->
+            <div class="sessions-grid" id="sessionsGrid">
+                <!-- Sessions will be loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tööriistad</span>
+                <h2 class="section-title">Tasuta AI Tööriistad</h2>
+                <p class="section-subtitle">Kõik tööriistad, mida kasutame, on täiesti tasuta kättesaadavad</p>
+            </div>
+
+            <div class="tools-table-wrapper">
+                <table class="tools-table">
+                    <thead>
+                        <tr>
+                            <th>Tööriist</th>
+                            <th>Kasutus</th>
+                            <th>Tasuta Piirang</th>
+                            <th>Sobib Noortele</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>ChatGPT (Free)</strong></td>
+                            <td>Tekstivestlus, õppimine, ideede genereerimine</td>
+                            <td>Aeglasem, piiratud ajalugu</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bing Image Creator</strong></td>
+                            <td>Pildiloomine promptide põhjal</td>
+                            <td>~25 pilti päevas</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Canva Free</strong></td>
+                            <td>Disain, plakatid, AI features</td>
+                            <td>Piiratud mallid</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>CapCut</strong></td>
+                            <td>Video redigeerimine + AI tööriistad</td>
+                            <td>Vesimärgid</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scratch + AI2Scratch</strong></td>
+                            <td>Mängude ja interaktiivsete projektide loomine</td>
+                            <td>Täiesti tasuta</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Suno AI (Free)</strong></td>
+                            <td>Muusika genereerimine</td>
+                            <td>5 laulu/päev</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>ElevenLabs (Free)</strong></td>
+                            <td>Tekst hääleks (TTS)</td>
+                            <td>10,000 tähemärki/kuu</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Replit AI</strong></td>
+                            <td>Koodimise õppimine AI abiga</td>
+                            <td>Piiratud AI päringud</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google AI Studio</strong></td>
+                            <td>AI eksperimentid ja õppimine</td>
+                            <td>Täiesti tasuta</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ideogram Free</strong></td>
+                            <td>Pildigeneraator (hea tekstidega piltide jaoks)</td>
+                            <td>25 pilti/päev</td>
+                            <td><span class="badge-yes">✓ Jah</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tools-note">
+                <p><strong>💡 Märkus:</strong> Kõiki neid tööriistu saab kasutada ilma maksmata. Mõned võivad nõuda vanema nõusolekut registreerimisel. Kursuse ajal õpetame lastele nende tööriistade turvalist ja vastutustundlikku kasutamist.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Küsimused</span>
+                <h2 class="section-title">Korduma Kippuvad Küsimused</h2>
+                <p class="section-subtitle">Vastused kõige sagedasematele küsimustele</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kas kursus on tõesti täiesti tasuta?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Jah, 100% tasuta! <strong>Rakvere Vald toetab</strong> seda huviringi täielikult. Kõik õppematerjalid, tööriistad ja ressursid on kaasatud. Lapsevanematel ega lastel ei ole ühtegi kulu.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Millises vanuses lapsed võivad osaleda?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Kursus on mõeldud <strong>12-16 aastastele noortele</strong>. See vanusegrupp on piisavalt küps, et mõista AI põhimõtteid ja kasutada tööriistu iseseisvalt. Eelnev kogemus pole vajalik!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kus täpselt tunnid toimuvad?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tunnid toimuvad <strong>Lasilas, Rakvere Vallas</strong>. Täpne asukoht ja ruumi info edastatakse registreerunutele meiliga. Ruum on varustatud kõigi vajalike seadmetega (arvutid, internet).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kui sageli tunnid toimuvad?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Tunnid toimuvad <strong>2x kuus</strong> ja iga kord <strong>2x 45 minutit</strong> (kokku 90 minutit). See annab lastele piisavalt aega praktiliste projektide kallal töötamiseks ilma väsimuseta.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kas laps vajab oma arvutit või tahvelarvutit?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Ei, ei vaja!</strong> Kohal on kõik vajalikud arvutid ja seadmed. Kui laps soovib kodus harjutada, saab kasutada perekonna arvutit või tahvelarvutit (kõik tööriistad toimivad brauseris).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kas eelnev programmeerimise või tehnoloogia kogemus on vajalik?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Ei ole!</strong> Algame täiesti nullist. Kõik, mida vajame, on uudishimu ja soov õppida. Õpetame kõike samm-sammult ja iga laps liigub oma tempos.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kas tunnid sobivad ka tüdrukutele?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Kindlasti!</strong> AI ja tehnoloogia ei ole seotud sooga. Meie eesmärk on innustada kõiki noori - poisid ja tüdrukud on võrdselt oodatud. Loominguline AI on eriti atraktiivne nende jaoks, kes armastavad kunsti, muusikat ja disaini!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Kuidas toimub registreerimine?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Täitke registreerimisvorm <a href="#contact">siin allpool</a> või võtke meiega ühendust. Kuna kohti on <strong>piiratud arv (kuni 20 osalejat)</strong>, soovitame registreeruda võimalikult kiiresti. Kohtade täitumisel sulgeme registreerimise.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Kontakt</span>
+                <h2 class="section-title">Registreeru või Küsi Rohkem</h2>
+                <p class="section-subtitle">Täida vorm või võta meiega ühendust</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="parentName">Lapsevanema Nimi *</label>
+                            <input type="text" id="parentName" name="parentName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="childName">Lapse Nimi *</label>
+                            <input type="text" id="childName" name="childName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="childAge">Lapse Vanus *</label>
+                            <select id="childAge" name="childAge" required>
+                                <option value="">Vali vanus...</option>
+                                <option value="12">12 aastat</option>
+                                <option value="13">13 aastat</option>
+                                <option value="14">14 aastat</option>
+                                <option value="15">15 aastat</option>
+                                <option value="16">16 aastat</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Sõnum või Küsimused</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Kui teil on küsimusi või soovite midagi täpsustada..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span>Saada Registreering</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <h3>Asukoht</h3>
+                        <p>Lasila, Rakvere Vald<br>Täpne aadress saadetakse registreerinutele</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📧</div>
+                        <h3>E-mail</h3>
+                        <p><a href="mailto:info@example.ee">info@aihuviring.ee</a></p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📱</div>
+                        <h3>Telefon</h3>
+                        <p><a href="tel:+3725551234">+372 555 1234</a></p>
+                    </div>
+
+                    <div class="info-card highlight">
+                        <div class="info-icon">⏰</div>
+                        <h3>Tunnid</h3>
+                        <p><strong>2x kuus</strong><br>2x 45 minutit korraga<br>Täpsed kuupäevad lepitakse kokku grupiga</p>
+                    </div>
+
+                    <div class="info-card highlight">
+                        <div class="info-icon">💰</div>
+                        <h3>Maksumus</h3>
+                        <p><strong>TASUTA</strong><br>Rakvere Vald toetab<br>Kõik materjalid kaasatud</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo">🤖</span>
+                        <span class="brand-text">AI Huviring</span>
+                    </div>
+                    <p>Tasuta AI kursus Rakvere Valla noortele Lasilas</p>
+                    <div class="footer-badge">✨ Toetajaks on Rakvere Vald</div>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Kiirlingid</h4>
+                    <ul>
+                        <li><a href="#home">Avaleht</a></li>
+                        <li><a href="#about">Meist</a></li>
+                        <li><a href="#modules">Moodulid</a></li>
+                        <li><a href="#sessions">Tunnid</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Kontakt</h4>
+                    <ul>
+                        <li><a href="#contact">Registreeru</a></li>
+                        <li><a href="#faq">KKK</a></li>
+                        <li><a href="mailto:info@aihuviring.ee">info@aihuviring.ee</a></li>
+                        <li><a href="tel:+3725551234">+372 555 1234</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Info</h4>
+                    <ul>
+                        <li>📍 Lasila, Rakvere Vald</li>
+                        <li>📅 2x kuus (2x 45 min)</li>
+                        <li>👥 Kuni 20 osalejat</li>
+                        <li>🎯 12-16 aastat</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Huviring. Kõik õigused kaitstud.</p>
+                <p>Toetaja: <strong>Rakvere Vald</strong> 🏛️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Session Modal -->
+    <div class="modal" id="sessionModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody">
+                <!-- Content loaded by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/sessions-data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
