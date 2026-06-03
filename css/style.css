@@ -135,7 +135,7 @@ a { color: inherit; text-decoration: none; }
 /* Täisekraan lõke-taust, hajub servades tausta tooni */
 .hero__bg {
   position: absolute; inset: 0; z-index: 0;
-  background: url('../images/jaanitule-lokke.jpg') center 35% / cover no-repeat;
+  background: url('/images/jaanitule-lokke.jpg') center 35% / cover no-repeat;
   transform: scale(1.06);
   animation: heroZoom 22s ease-in-out infinite alternate;
 }
