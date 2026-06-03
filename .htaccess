@@ -1,9 +1,9 @@
-# Hostinger / Apache — väldi vanade HTML/CSS vahemälude probleeme
+# Hostinger / Apache — väldi vanade vahemälude probleeme.
+# HTML, CSS ja JS revalideeritakse iga kord (ETag kaudu kiire 304),
+# nii et muudatused jõuavad kohale ilma versiooninumbrita URL-is.
 <IfModule mod_headers.c>
-  <FilesMatch "^index\.html$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-    Header set Pragma "no-cache"
-    Header set Expires "0"
+  <FilesMatch "\.(html|css|js)$">
+    Header set Cache-Control "no-cache, must-revalidate"
   </FilesMatch>
 </IfModule>
 

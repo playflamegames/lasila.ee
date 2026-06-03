@@ -79,15 +79,11 @@ Seejärel ava http://localhost:8080
 ## Muudatused ja deploy
 
 Stiilid ja skriptid on eraldi failides (`css/style.css`, `js/main.js`) ning lingitud
-`index.html`-ist versiooninumbriga (nt `style.css?v=2`).
+`index.html`-ist **suhteliste teedega** (`css/style.css`, `js/main.js`). See töötab
+nii lokaalselt (topeltklõps `index.html`-il) kui serveris.
 
-Kui muudad CSS-i või JS-i ja uus versioon ei ilmu kohe (brauseri/CDN vahemälu),
-tõsta versiooninumbrit `index.html`-is:
+`.htaccess` paneb HTML/CSS/JS iga kord revalideerima (ETag → kiire 304), nii et
+muudatused jõuavad serveris kohale ilma versiooninumbri trikita. Tee lihtsalt
+`git add . && git commit && git push`.
 
-```html
-<link rel="stylesheet" href="/css/style.css?v=3" />
-<script src="/js/main.js?v=3"></script>
-```
-
-Seejärel `git add . && git commit && git push`. `.htaccess` hoiab `index.html`
-värskena, nii et uus versiooninumber jõuab kohe kohale.
+Kui brauser ikka näitab vana versiooni, tee kõva värskendus: `Cmd + Shift + R`.
