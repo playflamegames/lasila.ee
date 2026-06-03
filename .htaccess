@@ -1,0 +1,13 @@
+# Hostinger / Apache — väldi vanade HTML/CSS vahemälude probleeme
+<IfModule mod_headers.c>
+  <FilesMatch "^index\.html$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+</IfModule>
+
+# Õiged MIME tüübid
+AddType text/css .css
+AddType application/javascript .js
+AddType image/svg+xml .svg

@@ -75,3 +75,14 @@ python3 -m http.server 8080
 ```
 
 Seejärel ava http://localhost:8080
+
+## Muudatused ja deploy
+
+Stiilid ja skriptid on eraldi failides (`css/style.css`, `js/main.js`), aga **live deploy kasutab neid otse `index.html`-is** (inline), et Hostingeri vahemälu ei blokeeriks stiile.
+
+Pärast CSS/JS muudatusi käivita enne pushi:
+
+```bash
+./build.sh
+git add index.html && git commit -m "Uuenda inline stiilid" && git push
+```
