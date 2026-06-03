@@ -78,11 +78,16 @@ Seejärel ava http://localhost:8080
 
 ## Muudatused ja deploy
 
-Stiilid ja skriptid on eraldi failides (`css/style.css`, `js/main.js`), aga **live deploy kasutab neid otse `index.html`-is** (inline), et Hostingeri vahemälu ei blokeeriks stiile.
+Stiilid ja skriptid on eraldi failides (`css/style.css`, `js/main.js`) ning lingitud
+`index.html`-ist versiooninumbriga (nt `style.css?v=2`).
 
-Pärast CSS/JS muudatusi käivita enne pushi:
+Kui muudad CSS-i või JS-i ja uus versioon ei ilmu kohe (brauseri/CDN vahemälu),
+tõsta versiooninumbrit `index.html`-is:
 
-```bash
-./build.sh
-git add index.html && git commit -m "Uuenda inline stiilid" && git push
+```html
+<link rel="stylesheet" href="/css/style.css?v=3" />
+<script src="/js/main.js?v=3"></script>
 ```
+
+Seejärel `git add . && git commit && git push`. `.htaccess` hoiab `index.html`
+värskena, nii et uus versiooninumber jõuab kohe kohale.
