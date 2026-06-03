@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ===== SEO ===== -->
+  <title>MTÜ Lasila Küla · Lasila küla kogukonnaportaal</title>
+  <meta name="description" content="MTÜ Lasila Küla kogukonnaportaal. Lasila küla sündmused, uudised ja kogukonna tegevused Rakvere vallas, Lääne-Virumaal. Praegu fookuses: Lasila Jaanituli 20. juunil 2026." />
+  <meta name="keywords" content="MTÜ Lasila Küla, Lasila küla, Lasila kogukonnaportaal, Rakvere vald, Lääne-Virumaa, Lasila mõis, Lasila Jaanituli 2026, külaelu, kogukond" />
+  <meta name="author" content="MTÜ Lasila Küla" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.lasila.ee/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/favicon.svg" />
+
+  <!-- ===== Open Graph (Facebook, Messenger, LinkedIn jne) ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MTÜ Lasila Küla · Lasila küla kogukonnaportaal" />
+  <meta property="og:description" content="Lasila küla kogukonna koduleht. Sündmused, tegevused ja uudised Rakvere vallast. Praegu fookuses: Lasila Jaanituli 20. juunil 2026 — tasuta kõigile!" />
+  <meta property="og:url" content="https://www.lasila.ee/" />
+  <meta property="og:image" content="https://www.lasila.ee/images/jaanitule-lokke.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="et_EE" />
+  <meta property="og:site_name" content="MTÜ Lasila Küla" />
+
+  <!-- ===== Twitter / X kaart ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MTÜ Lasila Küla · Lasila küla kogukonnaportaal" />
+  <meta name="twitter:description" content="Lasila küla kogukonna koduleht. Sündmused, tegevused ja uudised Rakvere vallast. Praegu fookuses: Lasila Jaanituli 20. juunil 2026!" />
+  <meta name="twitter:image" content="https://www.lasila.ee/images/jaanitule-lokke.jpg" />
+
+  <!-- ===== Struktuurandmed (Google rich results) ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "MTÜ Lasila Küla",
+        "url": "https://www.lasila.ee",
+        "email": "lasilakyla@gmail.com",
+        "telephone": "+3725635 6399",
+        "sameAs": ["https://www.facebook.com/profile.php?id=100092688721388"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lasila küla",
+          "addressRegion": "Lääne-Virumaa",
+          "addressCountry": "EE"
+        }
+      },
+      {
+        "@type": "Event",
+        "name": "Lasila Jaanituli 2026",
+        "startDate": "2026-06-20T18:00:00+03:00",
+        "endDate": "2026-06-21T02:00:00+03:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "isAccessibleForFree": true,
+        "location": {
+          "@type": "Place",
+          "name": "Lasila külaplats",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lasila küla",
+            "addressRegion": "Lääne-Virumaa",
+            "addressCountry": "EE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 59.253,
+            "longitude": 26.218
+          }
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "MTÜ Lasila Küla",
+          "url": "https://www.lasila.ee"
+        },
+        "image": "https://www.lasila.ee/images/jaanitule-lokke.jpg",
+        "description": "Lasila Jaanituli on tasuta kogukonnaüritus Lasila külaplatsil. Kavas: 3×3 korvpalliturniir, jaanimängud, rahvatants, ansambel IZ-58, lõkke süütamine ja lõkkelaulud."
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav__brand"><i class="fa-solid fa-fire flame"></i> <span class="brand-full">MTÜ Lasila Küla</span><span class="brand-short">Lasila Küla</span></a>
+    <div class="nav__links">
+      <a href="#ajakava">Ajakava</a>
+      <a href="#tegevused">Tegevused</a>
+      <a href="#toetajad">Toetajad</a>
+      <a href="#koht">Külaplats</a>
+      <a href="#kaart">Kaart</a>
+      <button class="nav__share" id="share-btn" type="button" aria-label="Jaga lehte"><i class="fa-solid fa-share-nodes"></i> Jaga</button>
+      <a href="#annetus" class="nav__cta">Toeta üritust</a>
+    </div>
+    <button class="nav__burger" id="burger" aria-label="Menüü"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__embers" id="embers" aria-hidden="true"></div>
+    <div class="wrap hero__inner">
+      <div class="hero__text">
+        <span class="hero__badge"><i class="fa-solid fa-fire"></i> Esiletõstetud sündmus · TASUTA</span>
+        <h1 class="hero__title">Lasila <span class="accent">Jaanituli</span></h1>
+        <p class="hero__meta">20. juuni 2026 <span class="dot">·</span> Lasila külaplats</p>
+        <p class="hero__sub">Tule kogu perega tähistama jaanipäeva! Korvpall, jaanimängud, rahvatants, ansambel IZ-58, suur lõke ja lõkkelaulud hilisõhtuni. Korraldab MTÜ Lasila Küla.</p>
+        <div class="hero__actions">
+          <a href="#ajakava" class="btn btn--primary"><i class="fa-regular fa-calendar"></i> Vaata ajakava</a>
+          <a href="#annetus" class="btn btn--ghost"><i class="fa-solid fa-heart"></i> Toeta üritust</a>
+        </div>
+        <div class="countdown" id="countdown" aria-label="Aega ürituseni">
+          <div class="cd__box"><div class="cd__num" id="cd-d">–</div><div class="cd__lbl">päeva</div></div>
+          <div class="cd__box"><div class="cd__num" id="cd-h">–</div><div class="cd__lbl">tundi</div></div>
+          <div class="cd__box"><div class="cd__num" id="cd-m">–</div><div class="cd__lbl">min</div></div>
+          <div class="cd__box"><div class="cd__num" id="cd-s">–</div><div class="cd__lbl">sek</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></div>
+  </header>
+
+  <!-- ===================== AJAKAVA ===================== -->
+  <section class="section section--cream" id="ajakava">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">20. juuni 2026</span>
+        <h2 class="section__title">Päeva ajakava</h2>
+        <p class="section__lead">Programm algab juba hommikul ja kestab hilisõhtuni. Allolev kava võib täieneda.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item reveal"><div class="tl-time">10.00</div><div class="tl-dot"></div><div class="tl-body"><h3>3×3 korvpalliturniir</h3><p>Päeva avab sportlik korvpalliturniir. <a href="https://play.fiba3x3.com/events/e3d52fac-934f-45ba-bdb6-ab8c04d603b0" target="_blank" rel="noopener" class="tl-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Registreeri võistkond</a></p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">16.00</div><div class="tl-dot"></div><div class="tl-body"><h3>Kaitseliit ja Kadrina päästjad</h3><p>Tutvustused ja tegevused tervele perele.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">17.00</div><div class="tl-dot"></div><div class="tl-body"><h3>Jaanimängud</h3><p>Traditsioonilised mängud noortele ja vanadele.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">18.00</div><div class="tl-dot"></div><div class="tl-body"><h3>Amici Dancers</h3><p>Tantsuetendus külaplatsil.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">19.30</div><div class="tl-dot"></div><div class="tl-body"><h3>Rahvatants</h3><p>Rahvatantsijate esinemine.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">20.00</div><div class="tl-dot"></div><div class="tl-body"><h3>Lõkke süütamine</h3><p>Õhtu kõrghetk — suur jaanituli süüdatakse.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">20.05</div><div class="tl-dot"></div><div class="tl-body"><h3>Tantsuks ansambel IZ-58</h3><p>Elav muusika ja tantsuks mängimine.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">20.30</div><div class="tl-dot"></div><div class="tl-body"><h3>Amici Dancers tantsustuudio</h3><p>Tantsustuudio etteaste.</p></div></div>
+        <div class="tl-item reveal"><div class="tl-time">hiljem</div><div class="tl-dot"></div><div class="tl-body"><h3>Jätkab bänd &amp; DJ · 🔥 Lõkkelaulud</h3><p>Pidu jätkub hilisõhtuni lõkke ääres.</p></div></div>
+      </div>
+      <p class="tl-note reveal">Programm täieneb veelgi.</p>
+    </div>
+  </section>
+
+  <!-- ===================== LISATEGEVUSED ===================== -->
+  <section class="section section--dark section--activities" id="tegevused">
+    <div class="act-bg" aria-hidden="true">
+      <span class="blob blob--1"></span>
+      <span class="blob blob--2"></span>
+      <span class="blob blob--3"></span>
+      <div class="act-sparks" id="act-sparks"></div>
+    </div>
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">Kogu päeva avatud</span>
+        <h2 class="section__title">Lisategevused</h2>
+        <p class="section__lead">Tegevust jagub kogu perele — söögist meelelahutuseni.</p>
+      </div>
+      <div class="activities">
+        <div class="act-card reveal"><div class="ico ico--green"><i class="fa-solid fa-landmark"></i></div><h3>Avatud Lasila mõis</h3><p>Tutvu ajaloolise mõisaga.</p></div>
+        <div class="act-card reveal"><div class="ico ico--purple"><i class="fa-solid fa-palette"></i></div><h3>Näomaalingud</h3><p>Lastele värvilised näomaalingud.</p></div>
+        <div class="act-card reveal"><div class="ico ico--blue"><i class="fa-solid fa-children"></i></div><h3>Batuut</h3><p>Hüppamist täis lõbu lastele.</p></div>
+        <div class="act-card reveal"><div class="ico ico--gold"><i class="fa-solid fa-ticket"></i></div><h3>Loterii</h3><p>Auhinnaloosid kogu õhtu jooksul.</p></div>
+        <div class="act-card reveal"><div class="ico ico--red"><i class="fa-solid fa-burger"></i></div><h3>Toidukaravan</h3><p>Maitsev söök ja jook kohapeal.</p></div>
+        <div class="act-card reveal"><div class="ico ico--teal"><i class="fa-solid fa-ice-cream"></i></div><h3>Jäätiseauto</h3><p>Värskendav jäätis suvepäeva jaoks.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TOETAJAD ===================== -->
+  <section class="section section--cream" id="toetajad">
+    <div class="wrap">
+      <div class="section__head reveal">
+        <span class="eyebrow">Aitäh!</span>
+        <h2 class="section__title">Ürituse toetajad</h2>
+        <p class="section__lead">Lasila Jaanituli toimub tänu nendele toetajatele ja partneritele.</p>
+      </div>
+      <div class="sponsors reveal">
+        <div class="sp-card"><img src="images/logo-paasteamet.png" alt="Päästeamet" loading="lazy"></div>
+        <div class="sp-card"><img src="images/logo-kodututred.png" alt="Kodutütred" loading="lazy"></div>
+        <div class="sp-card"><img src="images/logo-noored-kotkad.png" alt="Noored Kotkad" loading="lazy"></div>
+        <div class="sp-card"><img src="images/logo-steba.png" alt="STEBA Building" loading="lazy"></div>
+        <div class="sp-card"><img src="images/logo-kodukamber.jpg" alt="Kodukamber" loading="lazy"></div>
+        <div class="sp-card"><img src="images/logo-lilleseadja.jpg" alt="Lilleseadja.ee" loading="lazy"></div>
+        <div class="sp-card"><img src="images/logo-viru-malev.png" alt="Viru malev" loading="lazy"></div>
+        <div class="sp-card"><img src="images/logo-rakvere-vald.png" alt="Rakvere vald" loading="lazy"></div>
+        <div class="sp-card"><img src="images/logo-agrimet.png" alt="AgriMet" loading="lazy"></div>
+        <div class="sp-card"><img src="images/logo-playflame.png" alt="PlayFlame" loading="lazy"></div>
+        <div class="sp-card"><span class="sp-ph">Lasila Agro OÜ</span></div>
+        <div class="sp-card"><span class="sp-ph">Rikstone Ehitus</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ANNETUS ===================== -->
+  <section class="section section--cream" id="annetus" style="padding-top:0;">
+    <div class="wrap">
+      <div class="donate reveal">
+        <div>
+          <span class="eyebrow" style="color:var(--tuli-hele)">Toeta kogukonda</span>
+          <h2>Aita meil pidu suuremaks teha</h2>
+          <p>Iga annetus aitab katta lõkkepuude, esinejate, lastele mõeldud tegevuste ja korralduskulude eest. Toetada saab pangaülekandega MTÜ Lasila Küla annetuste arvele.</p>
+          <a href="mailto:lasilakyla@gmail.com?subject=Annetus%20Jaanituli%202026" class="btn btn--primary"><i class="fa-solid fa-envelope"></i> Küsi lisa</a>
+        </div>
+        <div class="donate-box">
+          <div class="donate-row"><span class="k">Saaja</span><span class="v">MTÜ Lasila Küla</span></div>
+          <div class="donate-row"><span class="k">Annetuste arve (IBAN)</span><span class="v"><span class="iban-num">EE97 1010 0119 7394 2229</span><button class="copy-btn" type="button" data-copy="EE9710100119739422229" aria-label="Kopeeri IBAN"><i class="fa-regular fa-copy"></i></button></span></div>
+          <div class="donate-row"><span class="k">Selgitus</span><span class="v">Jaanituli 2026</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KÜLAPLATS / KOHT ===================== -->
+  <section class="section section--dark" id="koht">
+    <div class="wrap place">
+      <div class="reveal">
+        <span class="eyebrow">Toimumiskoht</span>
+        <h2 class="section__title">Lasila külaplats &amp; mõis</h2>
+        <p class="section__lead" style="margin-bottom:18px;">Üritus toimub Lasila külaplatsil, ajaloolise Lasila mõisa läheduses Rakvere vallas. Kogu päeva on avatud ka mõis.</p>
+        <p style="color:rgba(255,255,255,.7)"><i class="fa-solid fa-location-dot" style="color:var(--tuli-hele)"></i> Lasila küla, Rakvere vald, Lääne-Virumaa<br>
+        <i class="fa-solid fa-globe" style="color:var(--tuli-hele)"></i> <a href="https://www.lasila.ee" style="color:var(--tuli-hele)">www.lasila.ee</a></p>
+
+        <div class="mois-info">
+          <h3><i class="fa-solid fa-landmark"></i> Unustatud mõisad — külastuspäevad</h3>
+          <p>Lasila mõis osaleb projektis „Unustatud mõisad". Külastuspäevad 2026:</p>
+          <ul class="mois-dates">
+            <li>4. ja 5. juuli</li>
+            <li>18. ja 19. juuli</li>
+            <li>8. august</li>
+          </ul>
+          <a href="http://www.moisakoolid.ee/et/article/unustatud-m%C3%B5isad" target="_blank" rel="noopener" class="mois-link">Loe lähemalt moisakoolid.ee <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        </div>
+      </div>
+      <div class="place__media">
+        <img src="images/mois-peahoone.jpg" alt="Lasila mõisa peahoone" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== KAART ===================== -->
+  <section class="section section--cream" id="kaart">
+    <div class="wrap">
+      <div class="map-head reveal">
+        <div class="map-head__title">
+          <span class="map-ico"><i class="fa-solid fa-compass"></i></span>
+          <div>
+            <h2 class="section__title" style="margin:0">Kuidas siia tulla?</h2>
+            <p class="section__lead" style="margin:0">Lasila külaplats ja laululava asukoht kaardil</p>
+          </div>
+        </div>
+        <span class="map-coords"><i class="fa-solid fa-location-dot"></i> Koordinaadid: 59.253, 26.218</span>
+      </div>
+      <div id="map" class="map reveal" role="application" aria-label="Lasila külaplatsi kaart"></div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand"><i class="fa-solid fa-fire" style="color:var(--tuli-hele)"></i> MTÜ Lasila Küla</div>
+          <p>MTÜ Lasila Küla kogukonnaportaal. Lasila küla sündmused, tegevused ja uudised Rakvere vallast, Lääne-Virumaalt.</p>
+        </div>
+        <div>
+          <h4>Kiirlingid</h4>
+          <a href="#ajakava">Ajakava</a>
+          <a href="#tegevused">Tegevused</a>
+          <a href="#toetajad">Toetajad</a>
+          <a href="#kaart">Kaart</a>
+          <a href="#annetus">Toeta üritust</a>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <a href="tel:+37256356399">Telefon: 5635 6399</a>
+          <a href="mailto:lasilakyla@gmail.com">lasilakyla@gmail.com</a>
+          <a href="https://www.lasila.ee">www.lasila.ee</a>
+          <a href="https://www.facebook.com/profile.php?id=100092688721388" target="_blank" rel="noopener"><i class="fa-brands fa-facebook"></i> Facebook: MTÜ Lasila Küla</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 MTÜ Lasila Küla. Kõik õigused kaitstud.</span>
+        <span>Lasila Kogukonnaportaal</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
