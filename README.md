@@ -78,12 +78,16 @@ Seejärel ava http://localhost:8080
 
 ## Muudatused ja deploy
 
-Stiilid ja skriptid on eraldi failides (`css/style.css`, `js/main.js`) ning lingitud
-`index.html`-ist **suhteliste teedega** (`css/style.css`, `js/main.js`). See töötab
-nii lokaalselt (topeltklõps `index.html`-il) kui serveris.
+Live leht kasutab versioonitud asset-faile:
 
-`.htaccess` paneb HTML/CSS/JS iga kord revalideerima (ETag → kiire 304), nii et
-muudatused jõuavad serveris kohale ilma versiooninumbri trikita. Tee lihtsalt
-`git add . && git commit && git push`.
+```html
+<link rel="stylesheet" href="css/style-20260604.css" />
+<script src="js/main-20260604.js"></script>
+```
 
-Kui brauser ikka näitab vana versiooni, tee kõva värskendus: `Cmd + Shift + R`.
+See murrab Hostingeri/CDN-i vana `css/style.css` cache'i ning töötab ka lokaalselt
+(topeltklõps `index.html`-il). Kui CSS-i või JS-i oluliselt muudad, tee uus
+failinimi (nt `style-20260605.css`) ja uuenda `index.html` viidet.
+
+Seejärel tee `git add . && git commit && git push`. Kui brauser ikka näitab vana
+versiooni, tee kõva värskendus: `Cmd + Shift + R`.
