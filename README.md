@@ -11,7 +11,7 @@ Lasila küla kogukonnaportaali avaleht, mis keerleb aktuaalseima sündmuse — *
 - **Toetajad** — logo ja tekstipõhised toetajakaardid
 - **Annetuse plokk** — IBAN + kopeerimisnupp
 - **Külaplats/mõis** — toimumiskoha sektsioon
-- **Kaart** — OpenStreetMap (Leaflet), marker Lasila külaplatsil (59.253, 26.218)
+- **Kaart** — OpenStreetMap (Leaflet), marker Lasila külaplatsil (59.250511, 26.218493)
 - **Jalus** — kontaktid ja kiirlingid
 - **SEO / OG** — meta tagid ja struktuurandmed sotsiaalmeedia jagamiseks
 - Animatsioonid: scroll-reveal, lendavad sädemed, sujuvad üleminekud

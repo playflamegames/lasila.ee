@@ -111,7 +111,7 @@
   /* ---- Leaflet kaart (Lasila külaplats) ---- */
   const mapEl = document.getElementById('map');
   if (mapEl && window.L) {
-    const lat = 59.253, lng = 26.218;
+    const lat = 59.250511, lng = 26.218493;
     const map = L.map('map', { scrollWheelZoom: false }).setView([lat, lng], 14);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
