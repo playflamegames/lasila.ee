@@ -41,7 +41,6 @@ Lasila küla kogukonnaportaali avaleht, mis keerleb aktuaalseima sündmuse — *
 - **Saaja:** MTÜ Lasila Küla
 - **Annetuste IBAN:** EE97 1010 0119 7394 2229
 - **Selgitus:** Jaanituli 2026
-- **Telefon:** 5635 6399
 - **E-post:** lasilakyla@gmail.com
 - **Veeb:** www.lasila.ee
 - **Facebook:** MTÜ Lasila Küla
