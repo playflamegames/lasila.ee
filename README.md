@@ -1,17 +1,15 @@
 # Lasila Kogukonnaportaal — Avaleht
 
-Lasila küla kogukonnaportaali avaleht, mis keerleb aktuaalseima sündmuse — **Lasila Jaanituli (20.06.2026)** — ümber. Staatiline sait (HTML/CSS/JS).
+Lasila küla kogukonnaportaali avaleht, mis toob esile aktuaalseima sündmuse — **Taimetarkuste matk Viitna järvede ümber (27.06.2026)** — ning viitab eraldi toimunud sündmuste arhiivile. Staatiline sait (HTML/CSS/JS).
 
 ## Valmis funktsioonid (MVP)
 
-- **Hero-bänner** — sündmuse pealkiri, kuupäev, asukoht ja CTA-nupud
-- **Countdown** — loendur kuni 20.06.2026 18:00
-- **Ajakava** — vertikaalne timeline (10:00–hilisõhtu)
-- **Lisategevused** — mõis, näomaalingud, batuut, loterii, toidukaravan, jäätiseauto
-- **Toetajad** — logo ja tekstipõhised toetajakaardid
+- **Hero-bänner** — kogukonna tutvustus, aktuaalse sündmuse fookus ja CTA-nupud
+- **Countdown** — loendur kuni 27.06.2026 11:00
+- **Matka sektsioon** — Viitna järvede matka detailid, osaluspanus, registreerimine ja plakat
+- **Toimunud sündmused** — eraldi arhiivileht sündmuste kaartidega
+- **Jaanituli 2026 alamleht** — kokkuvõte, toimunud kava, toetajate tänu ja pildigalerii koos lightbox-vaaturiga
 - **Annetuse plokk** — IBAN + kopeerimisnupp
-- **Külaplats/mõis** — toimumiskoha sektsioon
-- **Kaart** — OpenStreetMap (Leaflet), marker Lasila külaplatsil (59.250511, 26.218493)
 - **Jalus** — kontaktid ja kiirlingid
 - **SEO / OG** — meta tagid ja struktuurandmed sotsiaalmeedia jagamiseks
 - Animatsioonid: scroll-reveal, lendavad sädemed, sujuvad üleminekud
@@ -22,12 +20,16 @@ Lasila küla kogukonnaportaali avaleht, mis keerleb aktuaalseima sündmuse — *
 | Sektsioon | Ankur |
 |-----------|-------|
 | Hero | `#hero` |
-| Ajakava | `#ajakava` |
-| Lisategevused | `#tegevused` |
-| Toetajad | `#toetajad` |
+| Taimetarkuste matk | `#matk` |
+| Toimunud sündmused | `#toimunud-sundmused` |
 | Annetus | `#annetus` |
-| Külaplats | `#koht` |
-| Kaart | `#kaart` |
+
+Toimunud sündmuste alamlehed:
+
+| Leht | URL |
+|------|-----|
+| Arhiiv | `/toimunud-sundmused/` |
+| Lasila Jaanituli 2026 | `/toimunud-sundmused/lasila-jaanituli-2026/` |
 
 ## Disain
 
@@ -40,7 +42,7 @@ Lasila küla kogukonnaportaali avaleht, mis keerleb aktuaalseima sündmuse — *
 
 - **Saaja:** MTÜ Lasila Küla
 - **Annetuste IBAN:** EE97 1010 0119 7394 2229
-- **Selgitus:** Jaanituli 2026
+- **Selgitus:** Kogukonna tegevused
 - **E-post:** lasilakyla@gmail.com
 - **Veeb:** www.lasila.ee
 - **Facebook:** MTÜ Lasila Küla
@@ -52,8 +54,13 @@ index.html
 favicon.svg
 css/style.css
 js/main.js
+toimunud-sundmused/
+  index.html
+  lasila-jaanituli-2026/
+    index.html
 images/
-  jaanitule-lokke.jpg   # hero taust
+  viitna-matk-poster.png # aktuaalse sündmuse plakat
+  jaanitule-lokke.jpg   # jaanipäeva galerii
   mois-peahoone.jpg     # mõisa sektsioon
   logo-*.png|jpg        # toetajate logod
   ...                   # varupildid
@@ -80,8 +87,8 @@ Seejärel ava http://localhost:8080
 Live leht kasutab versioonitud asset-faile:
 
 ```html
-<link rel="stylesheet" href="css/style-20260604.css" />
-<script src="js/main-20260604.js"></script>
+<link rel="stylesheet" href="css/style-20260625.css" />
+<script src="js/main-20260625.js"></script>
 ```
 
 See murrab Hostingeri/CDN-i vana `css/style.css` cache'i ning töötab ka lokaalselt

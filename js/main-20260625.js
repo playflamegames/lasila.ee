@@ -1,4 +1,4 @@
-/* Lasila Jaanituli — avalehe interaktsioonid */
+/* Lasila Küla — avalehe interaktsioonid */
 (function () {
   'use strict';
 
@@ -20,15 +20,16 @@
     links.addEventListener('click', e => { if (e.target.tagName === 'A') links.style.cssText = ''; });
   }
 
-  /* ---- Countdown 20.06.2026 18:00 (Eesti aeg ~ UTC+3) ---- */
-  const target = new Date('2026-06-20T18:00:00+03:00').getTime();
+  /* ---- Countdown 27.06.2026 11:00 (Eesti aeg ~ UTC+3) ---- */
+  const target = new Date('2026-06-27T11:00:00+03:00').getTime();
   const el = id => document.getElementById(id);
+  const countdownEls = ['cd-d','cd-h','cd-m','cd-s'].map(el);
   const pad = n => String(n).padStart(2, '0');
   function tick() {
     const diff = target - Date.now();
     if (diff <= 0) {
-      ['cd-d','cd-h','cd-m','cd-s'].forEach(i => el(i) && (el(i).textContent = '0'));
-      el('cd-d') && (el('cd-d').textContent = '🔥');
+      countdownEls.forEach(item => item && (item.textContent = '0'));
+      el('cd-d') && (el('cd-d').textContent = '0');
       return;
     }
     const d = Math.floor(diff / 864e5);
@@ -40,7 +41,9 @@
     el('cd-m').textContent = pad(m);
     el('cd-s').textContent = pad(s);
   }
-  tick(); setInterval(tick, 1000);
+  if (countdownEls.every(Boolean)) {
+    tick(); setInterval(tick, 1000);
+  }
 
   /* ---- Scroll-reveal animatsioon ---- */
   const io = new IntersectionObserver((entries) => {
@@ -50,22 +53,6 @@
     el.style.transitionDelay = (i % 6) * 0.06 + 's';
     io.observe(el);
   });
-
-  /* ---- Hõljuvad sädemed lisategevuste sektsioonis ---- */
-  const actSparks = document.getElementById('act-sparks');
-  if (actSparks) {
-    const N = 22;
-    for (let i = 0; i < N; i++) {
-      const s = document.createElement('span');
-      s.className = 'spark';
-      s.style.left = Math.random() * 100 + '%';
-      s.style.animationDuration = (7 + Math.random() * 8) + 's';
-      s.style.animationDelay = (Math.random() * 10) + 's';
-      const sz = 3 + Math.random() * 4;
-      s.style.width = s.style.height = sz + 'px';
-      actSparks.appendChild(s);
-    }
-  }
 
   /* ---- IBAN kopeerimine (ilma tühikuteta) ---- */
   document.querySelectorAll('.copy-btn').forEach(btn => {
@@ -86,9 +73,10 @@
   /* ---- Jaga-nupp (Web Share API + fallback) ---- */
   const shareBtn = document.getElementById('share-btn');
   if (shareBtn) {
+    const descriptionMeta = document.querySelector('meta[name="description"]');
     const shareData = {
-      title: 'Lasila Jaanituli 2026',
-      text: 'Tule Lasila Jaanitulele 20. juunil 2026 Lasila külaplatsil!',
+      title: document.title || 'MTÜ Lasila Küla',
+      text: descriptionMeta ? descriptionMeta.content : 'MTÜ Lasila Küla koduleht.',
       url: window.location.href
     };
     shareBtn.addEventListener('click', async () => {
@@ -144,19 +132,59 @@
     setTimeout(() => map.invalidateSize(), 300);
   }
 
-  /* ---- Lendavad sädemed hero's ---- */
-  const embers = document.getElementById('embers');
-  if (embers) {
-    const N = 28;
-    for (let i = 0; i < N; i++) {
-      const e = document.createElement('span');
-      e.className = 'ember';
-      e.style.left = Math.random() * 100 + '%';
-      e.style.animationDuration = (5 + Math.random() * 7) + 's';
-      e.style.animationDelay = (Math.random() * 8) + 's';
-      const sz = 3 + Math.random() * 5;
-      e.style.width = e.style.height = sz + 'px';
-      embers.appendChild(e);
+  /* ---- Jaanipäeva galerii lightbox ---- */
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxCaption = document.getElementById('lightbox-caption');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+  let currentGalleryIndex = 0;
+
+  function openLightbox(index) {
+    if (!lightbox || !lightboxImg || !galleryItems[index]) return;
+    const item = galleryItems[index];
+    const img = item.querySelector('img');
+    currentGalleryIndex = index;
+    lightboxImg.src = item.dataset.full || img.src;
+    lightboxImg.alt = img.alt || '';
+    if (lightboxCaption) {
+      lightboxCaption.textContent = item.dataset.caption || img.alt || '';
     }
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function moveLightbox(step) {
+    if (!galleryItems.length) return;
+    const nextIndex = (currentGalleryIndex + step + galleryItems.length) % galleryItems.length;
+    openLightbox(nextIndex);
+  }
+
+  galleryItems.forEach((item, index) => {
+    item.addEventListener('click', () => openLightbox(index));
+  });
+  lightboxClose && lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev && lightboxPrev.addEventListener('click', () => moveLightbox(-1));
+  lightboxNext && lightboxNext.addEventListener('click', () => moveLightbox(1));
+  if (lightbox) {
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closeLightbox();
+    });
+  }
+  document.addEventListener('keydown', (event) => {
+    if (!lightbox || !lightbox.classList.contains('open')) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowLeft') moveLightbox(-1);
+    if (event.key === 'ArrowRight') moveLightbox(1);
+  });
 })();

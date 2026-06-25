@@ -132,10 +132,10 @@ a { color: inherit; text-decoration: none; }
   overflow: hidden;
   background: #0a0f1a;
 }
-/* Täisekraan lõke-taust, hajub servades tausta tooni */
+/* Täisekraan suvine taust, hajub servades tausta tooni */
 .hero__bg {
   position: absolute; inset: 0; z-index: 0;
-  background: url('../images/jaanitule-lokke.jpg') center 35% / cover no-repeat;
+  background: url('../images/mois-peahoone.jpg') center 42% / cover no-repeat;
   transform: scale(1.06);
   animation: heroZoom 22s ease-in-out infinite alternate;
 }
@@ -151,22 +151,6 @@ a { color: inherit; text-decoration: none; }
     radial-gradient(120% 80% at 65% 30%, rgba(232,84,30,.18) 0%, rgba(232,84,30,0) 55%),
     linear-gradient(180deg, rgba(10,15,26,.55) 0%, rgba(10,15,26,0) 28%, rgba(10,15,26,.2) 62%, var(--kreem) 100%);
 }
-.hero__embers { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; }
-.ember {
-  position: absolute; bottom: -10px;
-  width: 6px; height: 6px; border-radius: 50%;
-  background: radial-gradient(circle, var(--tuli-hele), var(--tuli));
-  filter: blur(.5px);
-  animation: rise linear infinite;
-  opacity: 0;
-}
-@keyframes rise {
-  0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
-  10%  { opacity: .9; }
-  90%  { opacity: .7; }
-  100% { transform: translateY(-100vh) translateX(40px) scale(.4); opacity: 0; }
-}
-
 .hero__inner {
   position: relative; z-index: 2;
   width: 100%;
@@ -196,12 +180,8 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 800;
   margin-bottom: 14px;
-  text-shadow: 0 6px 40px rgba(232,84,30,.3);
-}
-.hero__title .accent {
-  background: linear-gradient(180deg, var(--tuli-hele), var(--tuli));
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #fff;
+  text-shadow: 0 6px 40px rgba(0,0,0,.38);
 }
 .hero__meta {
   font-size: 1.25rem; font-weight: 600; color: #fff;
@@ -219,6 +199,8 @@ a { color: inherit; text-decoration: none; }
 }
 .btn--primary { background: var(--tuli); color: #fff; box-shadow: 0 10px 28px rgba(232,84,30,.45); }
 .btn--primary:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(232,84,30,.55); }
+.btn--leaf { background: var(--roheline); color: #fff; box-shadow: 0 10px 28px rgba(46,94,58,.35); }
+.btn--leaf:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(46,94,58,.45); }
 .btn--ghost { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.25); }
 .btn--ghost:hover { background: rgba(255,255,255,.2); transform: translateY(-3px); }
 
@@ -238,10 +220,85 @@ a { color: inherit; text-decoration: none; }
 .section { padding: 90px 0; }
 .section--dark { background: var(--oo-2); color: #fff; }
 .section--cream { background: var(--kreem); }
+.section--leaf { background: linear-gradient(180deg, var(--kreem) 0%, #eef5e8 100%); }
 .section__head { text-align: center; max-width: 640px; margin: 0 auto 54px; }
 .section__title { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin: 10px 0 12px; }
 .section__lead { color: var(--tekst-hele); font-size: 1.08rem; }
 .section--dark .section__lead { color: rgba(255,255,255,.7); }
+
+/* ---------- ALAMLEHED JA ARHIIV ---------- */
+.subpage-hero {
+  background:
+    linear-gradient(135deg, rgba(14,23,38,.94), rgba(22,36,58,.94)),
+    radial-gradient(circle at 85% 20%, rgba(232,84,30,.3), transparent 34%);
+  color: #fff; padding: 132px 0 76px;
+}
+.subpage-hero__inner { max-width: 760px; }
+.subpage-hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-weight: 800; margin: 12px 0 16px;
+}
+.subpage-hero p { color: rgba(255,255,255,.78); font-size: 1.12rem; }
+.subpage-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.archive-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.archive-card {
+  display: grid; grid-template-rows: auto 1fr; overflow: hidden;
+  background: #fff; border-radius: 24px; box-shadow: var(--vari-suur);
+  border: 1px solid rgba(0,0,0,.05); transition: transform .25s, box-shadow .25s;
+}
+.archive-card:hover { transform: translateY(-5px); box-shadow: 0 30px 70px rgba(14,23,38,.24); }
+.archive-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; }
+.archive-card__body { padding: 28px; }
+.archive-card__body h2, .archive-card__body h3 { margin: 8px 0 10px; }
+.archive-card__body p { color: var(--tekst-hele); margin-bottom: 20px; }
+.past-events-card {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 28px;
+  align-items: center; padding: 40px; border-radius: 26px;
+  background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 22px 50px rgba(0,0,0,.2);
+}
+.past-events-card__actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: flex-end; }
+
+/* ---------- UUS SÜNDMUS / MATK ---------- */
+.event-grid {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+  gap: 46px; align-items: start;
+}
+.event-card {
+  background: #fff; border-radius: 26px; padding: 36px;
+  box-shadow: var(--vari-suur); border: 1px solid rgba(46,94,58,.12);
+}
+.event-details {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px; margin-bottom: 28px;
+}
+.event-detail-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 16px; background: rgba(46,94,58,.06);
+  border: 1px solid rgba(46,94,58,.12); border-radius: 16px;
+}
+.event-detail-item i { color: var(--roheline); font-size: 1.2rem; margin-top: 3px; }
+.event-detail-item .k {
+  display: block; font-size: .74rem; text-transform: uppercase;
+  letter-spacing: .12em; color: var(--tekst-hele); font-weight: 800;
+}
+.event-detail-item .v { display: block; font-family: 'Sora',sans-serif; font-weight: 800; color: var(--tekst); line-height: 1.3; }
+.event-description { display: grid; gap: 14px; color: var(--tekst-hele); }
+.event-description strong { color: var(--tekst); }
+.event-registration {
+  margin-top: 28px; padding: 22px 24px; border-radius: 18px;
+  background: linear-gradient(135deg, var(--roheline), #1c3b24);
+  color: #fff; display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.event-registration p { color: rgba(255,255,255,.78); margin-top: 4px; }
+.event-poster {
+  position: sticky; top: 96px; overflow: hidden; border-radius: 26px;
+  box-shadow: var(--vari-suur); background: #fff;
+}
+.event-poster img { width: 100%; display: block; }
+.event-note {
+  margin-top: 18px; color: var(--tekst-hele); font-size: .95rem;
+}
 
 /* ---------- AJAKAVA ---------- */
 .timeline { max-width: 760px; margin: 0 auto; position: relative; }
@@ -295,21 +352,6 @@ a { color: inherit; text-decoration: none; }
   100% { transform: translate(-50px,45px) scale(.92); }
 }
 
-/* Hõljuvad sädemed lisategevuste taustal */
-.act-sparks { position: absolute; inset: 0; }
-.act-sparks .spark {
-  position: absolute; bottom: -8px;
-  width: 4px; height: 4px; border-radius: 50%;
-  background: radial-gradient(circle, var(--tuli-hele), var(--tuli));
-  opacity: 0;
-  animation: sparkRise linear infinite;
-}
-@keyframes sparkRise {
-  0%   { transform: translateY(0) scale(1); opacity: 0; }
-  12%  { opacity: .8; }
-  88%  { opacity: .5; }
-  100% { transform: translateY(-560px) translateX(50px) scale(.3); opacity: 0; }
-}
 .activities { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
 .act-card {
   background: #fff; border-radius: var(--raadius); padding: 26px 16px;
@@ -363,6 +405,105 @@ a { color: inherit; text-decoration: none; }
 }
 .feature-card h3 { color: #fff; font-size: 1.22rem; margin-bottom: 8px; }
 .feature-card p { color: rgba(255,255,255,.72); font-size: .96rem; }
+
+/* ---------- MÖÖDUNUD SÜNDMUS / JAANIPÄEV ---------- */
+.past-event-summary {
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr);
+  gap: 34px; align-items: start;
+}
+.summary-text, .summary-sidebar {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 24px; box-shadow: 0 22px 50px rgba(0,0,0,.2);
+  backdrop-filter: blur(6px);
+}
+.summary-text { padding: 34px; }
+.summary-text p { color: rgba(255,255,255,.76); margin-bottom: 16px; }
+.summary-text p:last-child { margin-bottom: 0; }
+.summary-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px; margin: 24px 0;
+}
+.stat-card {
+  padding: 18px; border-radius: 16px;
+  background: rgba(246,166,35,.13); border: 1px solid rgba(246,166,35,.28);
+}
+.stat-card strong { display: block; font-family: 'Sora',sans-serif; font-size: 1.55rem; color: var(--tuli-hele); line-height: 1; }
+.stat-card span { display: block; color: rgba(255,255,255,.66); font-size: .86rem; margin-top: 6px; }
+.summary-sidebar { padding: 28px; }
+.summary-sidebar h3 { color: #fff; margin-bottom: 18px; }
+.summary-list { list-style: none; display: grid; gap: 12px; }
+.summary-list li {
+  display: flex; gap: 10px; align-items: center;
+  color: rgba(255,255,255,.74); font-weight: 600;
+}
+.summary-list i { color: var(--tuli-hele); width: 22px; text-align: center; }
+.thanks-list {
+  margin-top: 24px; padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.62); font-size: .92rem;
+}
+
+/* ---------- PILDIGALERII ---------- */
+.gallery-head { margin: 60px 0 26px; text-align: center; }
+.gallery-grid {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.gallery-item {
+  position: relative; overflow: hidden; border: 0; padding: 0;
+  border-radius: 20px; background: #101827; cursor: pointer;
+  box-shadow: 0 18px 42px rgba(0,0,0,.24);
+  aspect-ratio: 4 / 3;
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform .35s ease, filter .35s ease;
+}
+.gallery-item:hover img { transform: scale(1.06); filter: brightness(.78); }
+.gallery-overlay {
+  position: absolute; inset: 0; display: flex; align-items: flex-end;
+  padding: 18px; color: #fff;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 38%, rgba(0,0,0,.72) 100%);
+  opacity: 0; transition: opacity .25s ease;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-caption { font-weight: 800; text-align: left; text-shadow: 0 2px 10px rgba(0,0,0,.55); }
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  display: none; align-items: center; justify-content: center;
+  background: rgba(5,10,18,.88); padding: 28px;
+}
+.lightbox.open { display: flex; }
+.lightbox-content {
+  position: relative; max-width: min(1120px, 100%); width: 100%;
+}
+.lightbox-img {
+  display: block; width: 100%; max-height: 82vh; object-fit: contain;
+  border-radius: 18px; box-shadow: 0 30px 80px rgba(0,0,0,.55);
+}
+.lightbox-close, .lightbox-nav {
+  position: absolute; border: 0; cursor: pointer; color: #fff;
+  background: rgba(255,255,255,.13); backdrop-filter: blur(8px);
+  transition: background .2s, transform .2s;
+}
+.lightbox-close {
+  top: -18px; right: -18px; width: 44px; height: 44px;
+  border-radius: 50%; font-size: 1.15rem;
+}
+.lightbox-nav {
+  top: 50%; transform: translateY(-50%);
+  width: 48px; height: 62px; border-radius: 999px; font-size: 1.25rem;
+}
+.lightbox-nav:hover, .lightbox-close:hover { background: rgba(246,166,35,.88); color: var(--oo); }
+.lightbox-prev { left: 16px; }
+.lightbox-next { right: 16px; }
+.lightbox-caption {
+  margin-top: 16px; color: rgba(255,255,255,.84); text-align: center;
+  font-weight: 700;
+}
 
 /* ---------- TOETAJAD ---------- */
 .sponsors {
@@ -491,18 +632,34 @@ a { color: inherit; text-decoration: none; }
   .nav__burger { display: block; }
   .hero__inner { padding-top: 110px; }
   .hero__bg { background-position: center 30%; }
+  .event-grid, .past-event-summary { grid-template-columns: 1fr; }
+  .event-poster { position: static; max-width: 520px; margin: 0 auto; }
+  .event-registration { align-items: flex-start; flex-direction: column; }
+  .past-events-card { grid-template-columns: 1fr; }
+  .past-events-card__actions { justify-content: flex-start; }
   .donate, .place { grid-template-columns: 1fr; gap: 30px; padding: 36px; }
   .footer__grid { grid-template-columns: 1fr; gap: 26px; }
   .activities { grid-template-columns: repeat(3, 1fr); }
   .feature-activities { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) {
   .countdown { gap: 8px; }
   .cd__box { min-width: 62px; padding: 10px 12px; }
+  .event-card, .summary-text, .summary-sidebar { padding: 24px; }
+  .event-details, .summary-stats { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .lightbox { padding: 18px; }
+  .lightbox-close { top: 10px; right: 10px; }
+  .lightbox-nav { width: 42px; height: 52px; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
   .timeline::before { left: 62px; }
   .tl-item { grid-template-columns: 56px 1fr; gap: 16px; }
   .tl-dot { left: 57px; }
   .donate { padding: 28px; }
   .activities { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .feature-card__body { padding: 18px; }
+  .subpage-hero { padding: 112px 0 58px; }
+  .past-events-card { padding: 28px; }
 }
