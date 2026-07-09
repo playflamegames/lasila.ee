@@ -1,18 +1,22 @@
 # Lasila Kogukonnaportaal — Avaleht
 
-Lasila küla kogukonnaportaali avaleht, mis toob esile aktuaalseima sündmuse — **Taimetarkuste matk Viitna järvede ümber (27.06.2026)** — ning viitab eraldi toimunud sündmuste arhiivile. Staatiline sait (HTML/CSS/JS).
+Lasila küla kogukonnaportaali avaleht, mis toob esile aktuaalseima sündmuse — **Külastusmäng Unustatud mõisad 2026 (18.–19.07 ja 08.08.2026, Lasila mõis)** — ning püsiva Lasila kogukonna tutvustuse. Toimunud sündmustel on eraldi arhiiv. Staatiline sait (HTML/CSS/JS).
+
+Tuleviku plaanid (sh automaatne sündmuste vahetus avalehel) on kirjas failis [ROADMAP.md](ROADMAP.md).
 
 ## Valmis funktsioonid (MVP)
 
 - **Hero-bänner** — kogukonna tutvustus, aktuaalse sündmuse fookus ja CTA-nupud
-- **Countdown** — loendur kuni 27.06.2026 11:00
-- **Matka sektsioon** — Viitna järvede matka detailid, osaluspanus, registreerimine ja plakat
+- **Countdown** — loendur kuni 18.07.2026 10:00
+- **Unustatud mõisad 2026 sektsioon** — kuupäevad, külastustasud, giidituurid, plakat ja korraldaja info
+- **Lasila kogukonna sektsioon** — püsiv tutvustustekst ja foto (jääb lehele ka siis, kui üritusi pole)
 - **Toimunud sündmused** — eraldi arhiivileht sündmuste kaartidega
 - **Jaanituli 2026 alamleht** — kokkuvõte, toimunud kava, toetajate tänu ja pildigalerii koos lightbox-vaaturiga
+- **Viitna matka 2026 alamleht** — kokkuvõte ja plakat (galerii saab hiljem lisada)
 - **Annetuse plokk** — IBAN + kopeerimisnupp
 - **Jalus** — kontaktid ja kiirlingid
 - **SEO / OG** — meta tagid ja struktuurandmed sotsiaalmeedia jagamiseks
-- Animatsioonid: scroll-reveal, lendavad sädemed, sujuvad üleminekud
+- Animatsioonid: scroll-reveal, sujuvad üleminekud
 - Täielikult responsiivne (mobiil / tahvel / desktop)
 
 ## Lehe struktuur
@@ -20,7 +24,8 @@ Lasila küla kogukonnaportaali avaleht, mis toob esile aktuaalseima sündmuse �
 | Sektsioon | Ankur |
 |-----------|-------|
 | Hero | `#hero` |
-| Taimetarkuste matk | `#matk` |
+| Unustatud mõisad 2026 | `#unustatud-moisad` |
+| Lasila kogukond | `#kogukond` |
 | Toimunud sündmused | `#toimunud-sundmused` |
 | Annetus | `#annetus` |
 
@@ -29,6 +34,7 @@ Toimunud sündmuste alamlehed:
 | Leht | URL |
 |------|-----|
 | Arhiiv | `/toimunud-sundmused/` |
+| Taimetarkuste matk Viitna 2026 | `/toimunud-sundmused/taimetarkuste-matk-viitna-2026/` |
 | Lasila Jaanituli 2026 | `/toimunud-sundmused/lasila-jaanituli-2026/` |
 
 ## Disain
@@ -52,14 +58,19 @@ Toimunud sündmuste alamlehed:
 ```
 index.html
 favicon.svg
-css/style.css
-js/main.js
+ROADMAP.md
+css/style-20260709.css   # aktiivne stiilifail
+js/main-20260709.js      # aktiivne skript (countdown, lightbox jm)
 toimunud-sundmused/
   index.html
+  taimetarkuste-matk-viitna-2026/
+    index.html
   lasila-jaanituli-2026/
     index.html
 images/
-  viitna-matk-poster.png # aktuaalse sündmuse plakat
+  unustatud-moisad-2026-poster.png # aktuaalse sündmuse plakat
+  kogukond.jpg          # kogukonna sektsiooni foto
+  viitna-matk-poster.png # Viitna matka plakat (arhiiv)
   jaanitule-lokke.jpg   # jaanipäeva galerii
   mois-peahoone.jpg     # mõisa sektsioon
   logo-*.png|jpg        # toetajate logod
@@ -87,13 +98,13 @@ Seejärel ava http://localhost:8080
 Live leht kasutab versioonitud asset-faile:
 
 ```html
-<link rel="stylesheet" href="css/style-20260625.css" />
-<script src="js/main-20260625.js"></script>
+<link rel="stylesheet" href="css/style-20260709.css" />
+<script src="js/main-20260709.js"></script>
 ```
 
-See murrab Hostingeri/CDN-i vana `css/style.css` cache'i ning töötab ka lokaalselt
+See murrab Hostingeri/CDN-i vana cache'i ning töötab ka lokaalselt
 (topeltklõps `index.html`-il). Kui CSS-i või JS-i oluliselt muudad, tee uus
-failinimi (nt `style-20260605.css`) ja uuenda `index.html` viidet.
+failinimi (nt `style-20260801.css`) ja uuenda viiteid kõigil HTML-lehtedel.
 
 Seejärel tee `git add . && git commit && git push`. Kui brauser ikka näitab vana
 versiooni, tee kõva värskendus: `Cmd + Shift + R`.
