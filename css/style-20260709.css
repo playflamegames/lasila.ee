@@ -442,6 +442,11 @@ a { color: inherit; text-decoration: none; }
   color: rgba(255,255,255,.74); font-weight: 600;
 }
 .summary-list i { color: var(--tuli-hele); width: 22px; text-align: center; }
+.media-links { margin-top: 22px; padding-top: 18px; border-top: 1px dashed rgba(255,255,255,.15); }
+.media-links h4 { color: #fff; font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px; }
+.media-links a { display: flex; gap: 10px; align-items: flex-start; color: rgba(255,255,255,.78); line-height: 1.5; padding: 4px 0; transition: color .2s; }
+.media-links a i { color: var(--tuli-hele); margin-top: 4px; }
+.media-links a:hover { color: var(--tuli-hele); }
 .thanks-list {
   margin-top: 24px; padding-top: 22px;
   border-top: 1px solid rgba(255,255,255,.12);
