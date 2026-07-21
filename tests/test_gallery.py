@@ -21,6 +21,8 @@ JS_FILE = ROOT / "js" / "main-20260709.js"
 CSS_FILE = ROOT / "css" / "style-20260709.css"
 JAANITULI_FULL_DIR = ROOT / "images" / "jaanituli-2026" / "full"
 JAANITULI_THUMB_DIR = ROOT / "images" / "jaanituli-2026" / "thumb"
+VIITNA_FULL_DIR = ROOT / "images" / "taimetarkuste-matk-viitna-2026" / "full"
+VIITNA_THUMB_DIR = ROOT / "images" / "taimetarkuste-matk-viitna-2026" / "thumb"
 
 ORIGINAL_JAANITULI_FULL_PATHS = [
     "../../images/jaanituli.jpg",
@@ -30,6 +32,7 @@ ORIGINAL_JAANITULI_FULL_PATHS = [
     "../../images/mois-peahoone.jpg",
     "../../images/kogukond.jpg",
 ]
+ORIGINAL_VIITNA_FULL_PATH = "../../images/viitna-matk-poster.png"
 VOID_ELEMENTS = {
     "area",
     "base",
@@ -292,17 +295,68 @@ class GalleryContractTests(unittest.TestCase):
             self.assertEqual(item.alt, description)
             self.assertEqual(item.visible_caption, visible_caption)
 
-    def test_viitna_has_one_visible_item_and_needs_no_expansion(self):
+    def test_viitna_has_ten_items_with_nine_initially_visible(self):
         visible = [item for item in self.viitna.items if not item.hidden]
-        javascript = JS_FILE.read_text(encoding="utf-8")
+        hidden = [item for item in self.viitna.items if item.hidden]
 
-        self.assertEqual(len(self.viitna.items), 1)
-        self.assertEqual(len(visible), 1)
-        self.assertLessEqual(
-            len(self.viitna.items), int(self.viitna.initial_count or "0")
+        self.assertEqual(len(self.viitna.items), 10)
+        self.assertEqual(len({item.full for item in self.viitna.items}), 10)
+        self.assertEqual(len(visible), 9)
+        self.assertEqual(len(hidden), 1)
+        self.assertEqual(
+            self.viitna.items[0].full,
+            ORIGINAL_VIITNA_FULL_PATH,
         )
-        self.assertIn("items.length <= initialCount", javascript)
-        self.assertIn("if (toggle) toggle.hidden = true;", javascript)
+        for item in visible:
+            self.assertTrue(item.src)
+            self.assertFalse(item.src.startswith("data:"))
+            self.assertIsNone(item.data_src)
+        for item in hidden:
+            self.assertTrue(item.src.startswith("data:image/"))
+            self.assertTrue(item.data_src)
+            self.assertFalse(item.data_src.startswith("data:"))
+
+    def test_all_optimized_viitna_imports_are_referenced_once(self):
+        import_prefix = "../../images/taimetarkuste-matk-viitna-2026/full/"
+        references = Counter(
+            item.full
+            for item in self.viitna.items
+            if item.full and item.full.startswith(import_prefix)
+        )
+        expected_names = {path.name for path in VIITNA_FULL_DIR.glob("*.webp")}
+        expected_references = {
+            f"{import_prefix}{name}" for name in expected_names
+        }
+
+        self.assertEqual(len(expected_names), 9)
+        self.assertEqual(
+            expected_names,
+            {path.name for path in VIITNA_THUMB_DIR.glob("*.webp")},
+        )
+        self.assertEqual(set(references), expected_references)
+        self.assertTrue(all(count == 1 for count in references.values()))
+
+    def test_reviewed_viitna_captions_match_the_photos(self):
+        expected = {
+            "taimetarkuste-matk-27-06-26-viitnal-5.webp": (
+                "Matkalised Viitna metsarajal",
+                "Matkalised metsarajal",
+            ),
+            "taimetarkuste-matk-27-06-26-viitnal-3.webp": (
+                "Metsaalune taimestik Viitna järvede ümbruses",
+                "Metsaalune taimestik",
+            ),
+        }
+        items_by_name = {
+            Path(urlsplit(item.full or "").path).name: item
+            for item in self.viitna.items
+        }
+
+        for filename, (description, visible_caption) in expected.items():
+            item = items_by_name[filename]
+            self.assertEqual(item.caption, description)
+            self.assertEqual(item.alt, description)
+            self.assertEqual(item.visible_caption, visible_caption)
 
     def test_gallery_items_are_accessible(self):
         for gallery in (self.jaanituli, self.viitna):
