@@ -1,0 +1,22 @@
+---
+description: Lisa GoatCounter igale uuele HTML-lehele
+globs: "**/*.html"
+alwaysApply: false
+---
+
+# GoatCounter analytics
+
+Saidil kasutatakse GoatCounterit (`lasila.goatcounter.com`). Google Analyticsit ei kasutata.
+
+## Kohustuslik uutel / muudetud lehtedel
+
+Iga avaliku HTML-lehe `<head>` alguses peab olema:
+
+```html
+<script data-goatcounter="https://lasila.goatcounter.com/count"
+        async src="https://gc.zgo.at/count.js"></script>
+```
+
+- Uut lehte luues kopeeri see olemasolevalt lehelt — ära jäta vahele.
+- Ära lisa Google Analyticsi / gtag skripte.
+- Dashboard: https://lasila.goatcounter.com
