@@ -17,8 +17,8 @@ VIITNA_PAGE = (
     / "taimetarkuste-matk-viitna-2026"
     / "index.html"
 )
-JS_FILE = ROOT / "js" / "main-20260709.js"
-CSS_FILE = ROOT / "css" / "style-20260709.css"
+JS_FILE = ROOT / "js" / "main-20260820.js"
+CSS_FILE = ROOT / "css" / "style-20260820.css"
 JAANITULI_FULL_DIR = ROOT / "images" / "jaanituli-2026" / "full"
 JAANITULI_THUMB_DIR = ROOT / "images" / "jaanituli-2026" / "thumb"
 VIITNA_FULL_DIR = ROOT / "images" / "taimetarkuste-matk-viitna-2026" / "full"

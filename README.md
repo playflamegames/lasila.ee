@@ -1,14 +1,15 @@
 # Lasila Kogukonnaportaal — Avaleht
 
-Lasila küla kogukonnaportaali avaleht, mis toob esile aktuaalseima sündmuse — **Külastusmäng Unustatud mõisad 2026 (18.–19.07 ja 08.08.2026, Lasila mõis)** — ning püsiva Lasila kogukonna tutvustuse. Toimunud sündmustel on eraldi arhiiv. Staatiline sait (HTML/CSS/JS).
+Lasila küla kogukonnaportaali avaleht, mis toob esile aktuaalseima sündmuse — **Lasila Bürger 2026 (19.09.2026, Lasila Kuivatis)** — ning püsiva Lasila kogukonna tutvustuse. Toimunud sündmustel on eraldi arhiiv. Staatiline sait (HTML/CSS/JS).
 
 Tuleviku plaanid (sh automaatne sündmuste vahetus avalehel) on kirjas failis [ROADMAP.md](ROADMAP.md).
 
 ## Valmis funktsioonid (MVP)
 
 - **Hero-bänner** — kogukonna tutvustus, aktuaalse sündmuse fookus ja CTA-nupud
-- **Countdown** — loendur kuni 18.07.2026 10:00
-- **Unustatud mõisad 2026 sektsioon** — kuupäevad, külastustasud, giidituurid, plakat ja korraldaja info
+- **Countdown** — loendur kuni 19.09.2026 12:00
+- **Lasila Bürger 2026 sektsioon** — kuupäev, koht, plakat; täpsem kava lisandub peagi
+- **Unustatud mõisad 2026 alamleht** — kokkuvõte ja plakat (galerii saab hiljem lisada)
 - **Lasila kogukonna sektsioon** — püsiv tutvustustekst ja foto (jääb lehele ka siis, kui üritusi pole)
 - **Toimunud sündmused** — eraldi arhiivileht sündmuste kaartidega
 - **Jaanituli 2026 alamleht** — kokkuvõte, toimunud kava, toetajate tänu ja pildigalerii koos lightbox-vaaturiga
@@ -24,7 +25,7 @@ Tuleviku plaanid (sh automaatne sündmuste vahetus avalehel) on kirjas failis [R
 | Sektsioon | Ankur |
 |-----------|-------|
 | Hero | `#hero` |
-| Unustatud mõisad 2026 | `#unustatud-moisad` |
+| Lasila Bürger 2026 | `#lasila-burger` |
 | Lasila kogukond | `#kogukond` |
 | Toimunud sündmused | `#toimunud-sundmused` |
 | Annetus | `#annetus` |
@@ -34,6 +35,7 @@ Toimunud sündmuste alamlehed:
 | Leht | URL |
 |------|-----|
 | Arhiiv | `/toimunud-sundmused/` |
+| Unustatud mõisad 2026 | `/toimunud-sundmused/unustatud-moisad-2026/` |
 | Taimetarkuste matk Viitna 2026 | `/toimunud-sundmused/taimetarkuste-matk-viitna-2026/` |
 | Lasila Jaanituli 2026 | `/toimunud-sundmused/lasila-jaanituli-2026/` |
 
@@ -59,16 +61,20 @@ Toimunud sündmuste alamlehed:
 index.html
 favicon.svg
 ROADMAP.md
-css/style-20260709.css   # aktiivne stiilifail
-js/main-20260709.js      # aktiivne skript (countdown, lightbox jm)
+css/style-20260820.css   # aktiivne stiilifail
+js/main-20260820.js      # aktiivne skript (countdown, lightbox jm)
 toimunud-sundmused/
   index.html
+  unustatud-moisad-2026/
+    index.html
   taimetarkuste-matk-viitna-2026/
     index.html
   lasila-jaanituli-2026/
     index.html
 images/
-  unustatud-moisad-2026-poster.png # aktuaalse sündmuse plakat
+  lasila-burger-hero.jpg         # Bürgeri päikeseloojangu taust
+  lasila-burger-2026-poster.png # aktuaalse sündmuse plakat
+  unustatud-moisad-2026-poster.png # Unustatud mõisad plakat (arhiiv)
   kogukond.jpg          # kogukonna sektsiooni foto
   viitna-matk-poster.png # Viitna matka plakat (arhiiv)
   jaanitule-lokke.jpg   # jaanipäeva galerii
@@ -98,8 +104,8 @@ Seejärel ava http://localhost:8080
 Live leht kasutab versioonitud asset-faile:
 
 ```html
-<link rel="stylesheet" href="css/style-20260709.css" />
-<script src="js/main-20260709.js"></script>
+<link rel="stylesheet" href="css/style-20260820.css" />
+<script src="js/main-20260820.js"></script>
 ```
 
 See murrab Hostingeri/CDN-i vana cache'i ning töötab ka lokaalselt
