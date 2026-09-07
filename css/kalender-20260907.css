@@ -1,0 +1,16 @@
+/* Calendar styles, scoped to the calendar page. */
+.cal-note{padding:22px 26px;border-left:4px solid var(--roheline);background:#e7eddf;border-radius:0 14px 14px 0;max-width:900px}
+.cal-season{margin-top:42px}.cal-season>h2,.cal-undated>h2{font-size:1.55rem;margin-bottom:22px}
+.cal-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.cal-card{display:flex;gap:22px;padding:28px;background:white;border:1px solid #e5dfd5;border-radius:var(--raadius);align-items:flex-start}
+.cal-date{flex:0 0 115px;padding-right:18px;border-right:1px solid #e5dfd5;color:var(--roheline)}
+.cal-date strong{display:block;font:700 2.4rem/1.2 'Sora',sans-serif;letter-spacing:-2px}.cal-date span{display:block;text-transform:uppercase;font-size:.78rem;font-weight:700;margin:6px 0}.cal-date small{display:block;font-size:.72rem;color:var(--tekst-hele)}
+.cal-body{min-width:0}.cal-body h3{font-size:1.2rem;margin:3px 0 12px}.cal-body p{font-size:.9rem;color:var(--tekst-hele)}
+.cal-badge{display:inline-block;background:#f4e6c9;color:#684409;font-size:.7rem;font-weight:700;padding:5px 10px;border-radius:20px;margin-bottom:10px}
+.cal-body .cal-status{font-size:.75rem;margin-top:15px}.cal-link{display:inline-block;margin-top:12px;color:var(--roheline);font-weight:700;font-size:.85rem;text-decoration:underline;text-underline-offset:4px}
+.cal-undated{margin-top:40px;background:var(--kreem-2);padding:28px;border-radius:var(--raadius)}.cal-undated>div{border-top:1px solid #d9d1c3;padding-top:16px;margin-top:16px}.cal-undated h3{font-size:1.05rem;margin-bottom:8px}.cal-undated p{color:var(--tekst-hele);font-size:.9rem}
+.cal-source{font-size:.8rem;color:var(--tekst-hele);margin-top:28px;max-width:850px}.cal-source a{text-decoration:underline}
+@media(max-width:760px){.cal-grid{grid-template-columns:1fr}.cal-card{padding:22px;gap:18px}.cal-date{flex-basis:104px}.cal-note{padding:18px}}
+@media(max-width:370px){.cal-card{padding:16px;gap:12px}.cal-date{flex-basis:88px;padding-right:10px}.cal-date strong{font-size:2rem}}
+
+.cal-date .cal-range{font-size:1.65rem;letter-spacing:-1px;white-space:nowrap}
