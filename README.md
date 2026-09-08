@@ -10,7 +10,7 @@ Tuleviku plaanid (sh automaatne sündmuste vahetus avalehel) on kirjas failis [R
 
 - **Hero-bänner** — kogukonna tutvustus, aktuaalse sündmuse fookus ja CTA-nupud
 - **Countdown** — loendur kuni 19.09.2026 12:00
-- **Lasila Bürger 2026 sektsioon** — kuupäev, koht, plakat; täpsem kava lisandub peagi
+- **Lasila Bürger 2026 sektsioon** — kuupäev, koht, menüü, line-tants ja plakat
 - **Unustatud mõisad 2026 alamleht** — kokkuvõte ja plakat (galerii saab hiljem lisada)
 - **Lasila kogukonna sektsioon** — püsiv tutvustustekst ja foto (jääb lehele ka siis, kui üritusi pole)
 - **Toimunud sündmused** — eraldi arhiivileht sündmuste kaartidega

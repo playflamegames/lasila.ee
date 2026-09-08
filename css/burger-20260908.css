@@ -1,0 +1,34 @@
+/* Lasila Bürger event copy: menu and Maal elamise päev note. */
+.event-menu {
+  margin: 4px 0;
+  padding: 18px 20px;
+  border: 1px dashed rgba(107, 58, 22, .4);
+  border-radius: 8px;
+  background: rgba(139, 64, 20, .07);
+}
+.event-menu h3 {
+  margin: 0 0 10px;
+  font-family: 'Rye', 'Sora', serif;
+  font-size: 1.05rem;
+  letter-spacing: .06em;
+  color: #3a1d0c;
+}
+.event-menu ul {
+  margin: 0;
+  padding: 0 0 0 1.15em;
+  display: grid;
+  gap: 8px;
+}
+.event-menu li span {
+  display: inline;
+  color: #6b4a2b;
+}
+.event-menu p {
+  margin: 12px 0 0;
+}
+.section--west .event-note a {
+  color: #a33b12;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
