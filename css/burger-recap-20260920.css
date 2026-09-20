@@ -1,0 +1,59 @@
+/* Lasila Bürger 2026 kokkuvõtte päis — hajutatud plakatitaust */
+.subpage-hero--west {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 28rem;
+  padding: 148px 0 108px;
+  background: #140a06;
+}
+.subpage-hero--west .subpage-hero__photo {
+  position: absolute;
+  inset: -12%;
+  z-index: 0;
+  background: url('../images/lasila-burger-2026-poster.png') center 42% / cover no-repeat;
+  filter: blur(14px) saturate(1.2);
+  transform: scale(1.08);
+  opacity: .9;
+}
+.subpage-hero--west::before,
+.subpage-hero--west::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.subpage-hero--west::before {
+  z-index: 1;
+  background:
+    radial-gradient(80% 70% at 50% 42%, rgba(246,166,35,.18) 0%, rgba(246,166,35,0) 58%),
+    linear-gradient(90deg, rgba(14,23,38,.55) 0%, rgba(14,23,38,.18) 48%, rgba(14,23,38,.42) 100%);
+}
+.subpage-hero--west::after {
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(14,23,38,.42) 0%, rgba(14,23,38,.16) 38%, rgba(22,36,58,.55) 72%, var(--oo-2) 100%);
+}
+.subpage-hero--west .subpage-hero__inner {
+  position: relative;
+  z-index: 2;
+}
+.subpage-hero--west h1,
+.subpage-hero--west p {
+  text-shadow: 0 10px 32px rgba(0,0,0,.45);
+}
+
+@media (max-width: 560px) {
+  .subpage-hero--west {
+    min-height: 22rem;
+    padding: 120px 0 72px;
+  }
+  .subpage-hero--west .subpage-hero__photo {
+    filter: blur(10px) saturate(1.15);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subpage-hero--west .subpage-hero__photo {
+    transform: none;
+  }
+}
