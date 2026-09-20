@@ -23,6 +23,9 @@ JAANITULI_FULL_DIR = ROOT / "images" / "jaanituli-2026" / "full"
 JAANITULI_THUMB_DIR = ROOT / "images" / "jaanituli-2026" / "thumb"
 VIITNA_FULL_DIR = ROOT / "images" / "taimetarkuste-matk-viitna-2026" / "full"
 VIITNA_THUMB_DIR = ROOT / "images" / "taimetarkuste-matk-viitna-2026" / "thumb"
+BURGER_PAGE = ROOT / "toimunud-sundmused" / "lasila-burger-2026" / "index.html"
+BURGER_FULL_DIR = ROOT / "images" / "lasila-burger-2026" / "full"
+BURGER_THUMB_DIR = ROOT / "images" / "lasila-burger-2026" / "thumb"
 
 ORIGINAL_JAANITULI_FULL_PATHS = [
     "../../images/jaanituli.jpg",
@@ -183,13 +186,15 @@ class GalleryContractTests(unittest.TestCase):
     def setUpClass(cls) -> None:
         cls.jaanituli = parse_gallery(JAANITULI_PAGE)
         cls.viitna = parse_gallery(VIITNA_PAGE)
+        cls.burger = parse_gallery(BURGER_PAGE)
 
     def test_both_event_pages_use_universal_gallery(self):
         self.assertEqual(self.jaanituli.initial_count, "9")
         self.assertEqual(self.viitna.initial_count, "9")
+        self.assertEqual(self.burger.initial_count, "9")
 
     def test_gallery_items_are_nested_in_their_gallery(self):
-        for gallery in (self.jaanituli, self.viitna):
+        for gallery in (self.jaanituli, self.viitna, self.burger):
             self.assertEqual(len(gallery.galleries), 1)
             self.assertEqual(gallery.items_outside_galleries, [])
             self.assertEqual(gallery.galleries[0].items, gallery.items)
@@ -247,13 +252,13 @@ class GalleryContractTests(unittest.TestCase):
         self.assertEqual(toggle.get("aria-expanded"), "false")
 
     def test_both_event_pages_have_lightbox_counter(self):
-        for gallery in (self.jaanituli, self.viitna):
+        for gallery in (self.jaanituli, self.viitna, self.burger):
             self.assertEqual(len(gallery.counters), 1)
             self.assertEqual(gallery.counters[0].get("id"), "lightbox-counter")
             self.assertEqual(gallery.counters[0].get("aria-live"), "polite")
 
     def test_both_event_pages_have_modal_lightbox(self):
-        for gallery in (self.jaanituli, self.viitna):
+        for gallery in (self.jaanituli, self.viitna, self.burger):
             self.assertEqual(len(gallery.dialogs), 1)
             dialog = gallery.dialogs[0]
             self.assertEqual(dialog.get("id"), "lightbox")
@@ -358,15 +363,74 @@ class GalleryContractTests(unittest.TestCase):
             self.assertEqual(item.alt, description)
             self.assertEqual(item.visible_caption, visible_caption)
 
+    def test_burger_has_thirty_items_with_nine_initially_visible(self):
+        visible = [item for item in self.burger.items if not item.hidden]
+        hidden = [item for item in self.burger.items if item.hidden]
+
+        self.assertEqual(len(self.burger.items), 30)
+        self.assertEqual(len({item.full for item in self.burger.items}), 30)
+        self.assertEqual(len(visible), 9)
+        self.assertEqual(len(hidden), 21)
+        for item in visible:
+            self.assertTrue(item.src)
+            self.assertFalse(item.src.startswith("data:"))
+            self.assertIsNone(item.data_src)
+        for item in hidden:
+            self.assertTrue(item.src.startswith("data:image/"))
+            self.assertTrue(item.data_src)
+            self.assertFalse(item.data_src.startswith("data:"))
+
+    def test_all_optimized_burger_imports_are_referenced_once(self):
+        import_prefix = "../../images/lasila-burger-2026/full/"
+        references = Counter(
+            item.full
+            for item in self.burger.items
+            if item.full and item.full.startswith(import_prefix)
+        )
+        expected_names = {path.name for path in BURGER_FULL_DIR.glob("*.webp")}
+        expected_references = {
+            f"{import_prefix}{name}" for name in expected_names
+        }
+
+        self.assertEqual(len(expected_names), 30)
+        self.assertEqual(
+            expected_names,
+            {path.name for path in BURGER_THUMB_DIR.glob("*.webp")},
+        )
+        self.assertEqual(set(references), expected_references)
+        self.assertTrue(all(count == 1 for count in references.values()))
+
+    def test_reviewed_burger_captions_match_the_photos(self):
+        expected = {
+            "lasila-burger-19-09-2026-1.webp": (
+                "Korraldajad ja külalised ühispildil Lasila Kuivatise ees",
+                "Ühispilt salooni ees",
+            ),
+            "lasila-burger-19-09-2026-20.webp": (
+                "Värskelt valminud Lasila burger",
+                "Lasila burger",
+            ),
+        }
+        items_by_name = {
+            Path(urlsplit(item.full or "").path).name: item
+            for item in self.burger.items
+        }
+
+        for filename, (description, visible_caption) in expected.items():
+            item = items_by_name[filename]
+            self.assertEqual(item.caption, description)
+            self.assertEqual(item.alt, description)
+            self.assertEqual(item.visible_caption, visible_caption)
+
     def test_gallery_items_are_accessible(self):
-        for gallery in (self.jaanituli, self.viitna):
+        for gallery in (self.jaanituli, self.viitna, self.burger):
             for item in gallery.items:
                 self.assertTrue(item.caption)
                 self.assertTrue(item.alt)
                 self.assertEqual(item.button_type, "button")
 
     def test_local_gallery_assets_exist(self):
-        for gallery in (self.jaanituli, self.viitna):
+        for gallery in (self.jaanituli, self.viitna, self.burger):
             for item in gallery.items:
                 self.assertTrue(resolve_asset(gallery.page, item.full).is_file())
                 self.assertTrue(
