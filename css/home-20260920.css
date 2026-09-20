@@ -1,0 +1,69 @@
+/* Avalehe kogukonna ürituste pildiread */
+.community-moments {
+  margin-top: 64px;
+}
+.community-moments__head {
+  margin-bottom: 8px;
+}
+.community-moments__head h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  margin: 8px 0 6px;
+}
+.community-moments__head p {
+  color: var(--tekst-hele);
+  max-width: 42rem;
+}
+.community-event {
+  margin-top: 32px;
+}
+.community-event__bar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.community-event__bar h4 {
+  font-size: 1.12rem;
+  font-weight: 800;
+  margin: 0;
+}
+.community-event__bar small {
+  display: block;
+  margin-top: 2px;
+  color: var(--tekst-hele);
+  font-weight: 600;
+  font-size: .82rem;
+}
+.community-event__bar a {
+  color: var(--tuli);
+  font-weight: 700;
+  font-size: .92rem;
+  white-space: nowrap;
+}
+.community-event__bar a:hover { text-decoration: underline; }
+.community-event .gallery-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.community-event .gallery-item {
+  border-radius: 14px;
+  box-shadow: var(--vari);
+  aspect-ratio: 1 / 1;
+}
+.community-event .gallery-overlay { opacity: 1; padding: 12px; }
+.community-event .gallery-caption { font-size: .82rem; }
+
+@media (max-width: 900px) {
+  .community-event .gallery-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 560px) {
+  .community-moments { margin-top: 44px; }
+  .community-event .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -406,6 +406,18 @@ class GalleryContractTests(unittest.TestCase):
                 "Korraldajad ja külalised ühispildil Lasila Kuivatise ees",
                 "Ühispilt salooni ees",
             ),
+            "lasila-burger-19-09-2026-5.webp": (
+                "Naerune jutuajamine Karitsa mõisa aknal",
+                "Karitsa mõisa aken",
+            ),
+            "lasila-burger-19-09-2026-8.webp": (
+                "Avely Karitsa mõisa aknal",
+                "Avely mõisaaknal",
+            ),
+            "lasila-burger-19-09-2026-9.webp": (
+                "Tänukiri Rakvere vallalt Maal elamise päeva ürituse korraldamise eest",
+                "Tänukiri",
+            ),
             "lasila-burger-19-09-2026-20.webp": (
                 "Värskelt valminud Lasila burger",
                 "Lasila burger",
