@@ -1,0 +1,29 @@
+/* Projektide teated ja toetajate originaallogod. */
+.project { scroll-margin-top: 90px; }
+.project__layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr); gap: 48px; align-items: start; }
+.project__body h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); margin: 12px 0 24px; }
+.project__body p + p { margin-top: 18px; }
+.project__funding { padding: 30px; background: #fff; border: 1px solid rgba(14, 23, 38, .08); border-radius: var(--raadius); }
+.project__funding h3 { font-size: 1.2rem; margin-bottom: 22px; }
+.project__budget { display: grid; gap: 18px; }
+.project__budget dt { color: var(--tekst-hele); font-size: .9rem; }
+.project__budget dd { font-weight: 700; font-size: 1.1rem; }
+.project__support { margin-top: 40px; padding: 30px; background: #fff; border: 1px solid rgba(14, 23, 38, .08); border-radius: var(--raadius); }
+.project__support p { font-weight: 600; }
+.project__logos { display: flex; flex-wrap: wrap; align-items: center; gap: 32px 56px; margin-top: 28px; }
+.project__logos img { display: block; max-width: 100%; height: auto; }
+.project__kop { width: 246px; }
+.project__municipality { display: flex; align-items: center; gap: 18px; font-weight: 700; }
+.project__municipality img { width: 78px; }
+.project-teaser { grid-template-columns: minmax(0, 1fr); }
+.project-teaser .notice__body p { max-width: 52rem; }
+.project-teaser .tl-link { margin-top: 16px; }
+@media (min-width: 901px) and (max-width: 1100px) {
+  .nav__links { gap: 16px; }
+  .nav__links a { font-size: .88rem; }
+  .nav__share { padding: 8px 10px; }
+}
+@media (max-width: 760px) {
+  .project__layout { grid-template-columns: 1fr; gap: 28px; }
+  .project__funding, .project__support { padding: 24px; }
+}

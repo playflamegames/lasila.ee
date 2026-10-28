@@ -9,6 +9,7 @@ Tuleviku plaanid (sh automaatne sündmuste vahetus avalehel) on kirjas failis [R
 ## Valmis funktsioonid (MVP)
 
 - **Hero-bänner** — kogukonna tutvustus ja CTA-nupud kalendrisse ning arhiivi
+- **Projektid** — `/projektid/`: Lasila Kuivati lauatenniselaudade projektiteade koos rahastuse ja toetajate logodega; link avalehel, menüüdes ja jalustes
 - **Lasila Bürger 2026 alamleht** — kokkuvõte, meediakajastus ja galerii
 - **Unustatud mõisad 2026 alamleht** — kokkuvõte ja plakat (galerii saab hiljem lisada)
 - **Lasila kogukonna sektsioon** — püsiv tutvustustekst ja foto (jääb lehele ka siis, kui üritusi pole)
@@ -41,6 +42,8 @@ Toimunud sündmuste alamlehed:
 | Lasila Jaanituli 2026 | `/toimunud-sundmused/lasila-jaanituli-2026/` |
 
 ## Disain
+
+Projektide teate stiilid: `css/projektid-20261028.css`. KOP-i algne vektorlogo: `images/kop-logo.svg` (kasutaja antud fail). Rakvere valla vapp: `images/rakvere-valla-vapp.png` (1062 × 1200 px), alla laaditud 28.10.2026 [valla ametlikult sümboolikalehelt](https://rakverevald.ee/vald-kontakt-ja-uudised/kontakt-ja-info/sumboolika/), [originaalfail](https://rakverevald.ee/wp-content/uploads/2026/03/rakverevald_vapp_1150x1300.PNG.png). Varasem `logo-rakvere-vald.png` on teiste lehtede jaoks säilitatud.
 
 - Värvid: lõke-oranž `#E8541E`, öösinine `#0E1726`, soe kreem `#FBF6EE`, maastiku-roheline `#2E5E3A`
 - Fondid: Sora (pealkirjad) + Inter (sisu), Google Fonts
