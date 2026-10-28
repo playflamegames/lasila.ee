@@ -4,7 +4,7 @@ Lasila küla kogukonnaportaali avaleht, mis tutvustab MTÜ Lasila Küla tegevust
 
 Tuleviku plaanid (sh automaatne sündmuste vahetus avalehel) on kirjas failis [ROADMAP.md](ROADMAP.md).
 
-Ürituste kalender: `/kalender/`. Sügisüritus ja talvepidu on märgitud MTÜ siseüritustena; kevadmatk on kogukonna üritus. Kalendri stiilid: `css/kalender-20260907.css`.
+Ürituste kalender: `/kalender/`. Tulevased plaanid on eespool ja möödunud kuupäevad eraldi allosas. Sügisüritus on säilitatud 17.10.2026 varasema plaanina, tegelikku toimumist kinnitamata. Sügisüritus ja talvepidu on märgitud MTÜ siseüritustena; kevadmatk on kogukonna üritus. Kalendri stiilid: `css/kalender-20260907.css`.
 
 ## Valmis funktsioonid (MVP)
 
@@ -109,6 +109,8 @@ python3 -m http.server 8080
 Seejärel ava http://localhost:8080
 
 ## Muudatused ja deploy
+
+Enne iga avaldamist vaata üle kogu saidi nähtav sisu, mitte ainult muudetud plokk: avaleht, kalender, projektid, arhiiv ja kõik sündmuste alamlehed. Kontrolli kuupäevi, nädalapäevi, sündmuste staatust, tulevikuvormis lubadusi, linke ja pilte. Hoia tulevased plaanid ja möödunud kuupäevad kalendris eraldi. Möödunud plaanitud kuupäev ei kinnita tegelikku toimumist. Eelista suhtelistele ajamäärustele konkreetset kuud ja aastat. Kontrolli muudetud lehti arvuti- ja telefonivaates ning pärast avaldamist ka avalikul veebilehel.
 
 Live leht kasutab versioonitud asset-faile:
 
