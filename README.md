@@ -13,7 +13,7 @@ Tuleviku plaanid (sh automaatne sündmuste vahetus avalehel) on kirjas failis [R
 - **Lasila Bürger 2026 alamleht** — kokkuvõte, meediakajastus ja galerii
 - **Unustatud mõisad 2026 alamleht** — kokkuvõte ja plakat (galerii saab hiljem lisada)
 - **Lasila kogukonna sektsioon** — püsiv tutvustustekst ja foto (jääb lehele ka siis, kui üritusi pole)
-- **Toimunud sündmused** — eraldi arhiivileht sündmuste kaartidega
+- **Toimunud sündmused** — eraldi arhiivileht sündmuste kaartidega; septembri Rein Siku kohtumise ja viktoriinisarja avaloengu teated koos algsete plakatitega on arhiivis, avalehelt eemaldatud 28.10.2026
 - **Jaanituli 2026 alamleht** — kokkuvõte, toimunud kava, toetajate tänu ja pildigalerii koos lightbox-vaaturiga
 - **Viitna matka 2026 alamleht** — kokkuvõte ja plakat (galerii saab hiljem lisada)
 - **Annetuse plokk** — IBAN + kopeerimisnupp
@@ -36,6 +36,8 @@ Toimunud sündmuste alamlehed:
 | Leht | URL |
 |------|-----|
 | Arhiiv | `/toimunud-sundmused/` |
+| Kohtumine Rein Sikuga | `/toimunud-sundmused/kohtumine-rein-sikuga-2026/` |
+| Viktoriinisarja avaloeng | `/toimunud-sundmused/viktoriinisarja-avaloeng-2026/` |
 | Lasila Bürger 2026 | `/toimunud-sundmused/lasila-burger-2026/` |
 | Unustatud mõisad 2026 | `/toimunud-sundmused/unustatud-moisad-2026/` |
 | Taimetarkuste matk Viitna 2026 | `/toimunud-sundmused/taimetarkuste-matk-viitna-2026/` |
