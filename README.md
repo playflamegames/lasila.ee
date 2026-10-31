@@ -43,6 +43,8 @@ Toimunud sündmuste alamlehed:
 | Taimetarkuste matk Viitna 2026 | `/toimunud-sundmused/taimetarkuste-matk-viitna-2026/` |
 | Lasila Jaanituli 2026 | `/toimunud-sundmused/lasila-jaanituli-2026/` |
 
+„Unustatud mõisad 2026“ külastuspäevade allikas on algne Lasila plakat `images/unustatud-moisad-2026-poster.png`: 4.–5. ja 18.–19. juuli ning 8. august 2026. Lehel kuvatakse need plakatil märgitud päevadena, mitte kõigi päevade tegeliku toimumise uue kinnitusena. 4. juuli kontserti Lasila mõisas kirjeldab ka [korraldaja sündmuse leht](https://kammermuusikud.ee/syndmused/suvefestival-2026-merle-silmato-diana-liiv-lasila). Kuupäevad ühtlustatud 31.10.2026.
+
 ## Disain
 
 Projektide teate stiilid: `css/projektid-20261028.css`. KOP-i algne vektorlogo: `images/kop-logo.svg` (kasutaja antud fail). Rakvere valla vapp: `images/rakvere-valla-vapp.png` (1062 × 1200 px), alla laaditud 28.10.2026 [valla ametlikult sümboolikalehelt](https://rakverevald.ee/vald-kontakt-ja-uudised/kontakt-ja-info/sumboolika/), [originaalfail](https://rakverevald.ee/wp-content/uploads/2026/03/rakverevald_vapp_1150x1300.PNG.png). Varasem `logo-rakvere-vald.png` on teiste lehtede jaoks säilitatud.
